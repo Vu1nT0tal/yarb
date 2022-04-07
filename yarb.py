@@ -20,6 +20,35 @@ import requests
 requests.packages.urllib3.disable_warnings()
 
 
+def update_today(data: list=[]):
+    """更新today"""
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    root_path = Path(__file__).absolute().parent
+    data_path = root_path.joinpath('temp_data.json')
+    today_path = root_path.joinpath('today.md')
+    archive_path = root_path.joinpath(f'archive/{today.split("-")[0]}/{today}.md')
+
+    if not data:
+        if data_path.exists():
+            with open(data_path, 'r') as f1:
+                data = json.load(f1)
+            # data_path.unlink(missing_ok=True)
+        else:
+            Color.print_failed(f'[-] 文件不存在 {data_path}')
+            return
+
+    archive_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(today_path, 'w+') as f1, open(archive_path, 'w+') as f2:
+        content = f'# 每日安全资讯（{today}）\n\n'
+        for item in data:
+            (feed, value), = item.items()
+            content += f'- {feed}\n'
+            for title, url in value.items():
+                content += f'  - [{title}]({url})\n'
+        f1.write(content)
+        f2.write(content)
+
+
 def update_rss(rss: dict):
     """更新订阅源文件"""
     (key, value), = rss.items()
@@ -102,11 +131,17 @@ def init_rss(conf: dict, update: bool=False):
     feeds = []
     for rss in rss_list:
         (_, value), = rss.items()
-        rss = listparser.parse(open(value).read())
-        for feed in rss.feeds:
-            url = feed.url.strip('/')
-            if url not in feeds:
-                feeds.append(url)
+        try:
+            rss = listparser.parse(open(value).read())
+            for feed in rss.feeds:
+                url = feed.url.rstrip('/')
+                short_url = url.split('://')[-1].split('www.')[-1]
+                check = [feed for feed in feeds if short_url in feed]
+                if not check:
+                    feeds.append(url)
+        except Exception as e:
+            Color.print_failed(f'[-] 解析失败：{value}')
+            print(e)
 
     Color.print_focus(f'[+] {len(feeds)} feeds')
     return feeds
@@ -116,18 +151,35 @@ def send_text(bots: list, results: list):
     """发送text格式的消息"""
     if not bots or not results:
         return
-
     Color.print_focus(f'[+] text: {str(bots)}')
+
+    num1 = 0
+    num2 = 0
+    text = ''
     for result in results:
         (key, value), = result.items()
-        text = f'{key}\n\n'
+        text += f'{key}\n\n'
         for k, v in value.items():
             text += f'{k}\n{v}\n\n'
-        text = text.strip()
-        print(text)
+            num1 += 1
 
-        for bot in bots:
-            bot.send_text(text)
+        # 合并消息，最少10行/条
+        if num1 >= 10:
+            text = text.strip()
+            print(text)
+
+            # 发送
+            for bot in bots:
+                bot.send_text(text)
+
+            # 频率限制，最多20条/分钟
+            num2 += 1
+            if num2 >= 20:
+                time.sleep(60)
+
+            # 恢复
+            num1 = 0
+            text = ''
 
 
 def send_markdown(bots: list, results: list):
@@ -167,7 +219,7 @@ def job(args):
     results = []
     numb = 0
     tasks = []
-    with ThreadPoolExecutor(50) as executor:
+    with ThreadPoolExecutor(100) as executor:
         for url in feeds:
             tasks.append(executor.submit(parseThread, url))
         for task in as_completed(tasks):
@@ -177,9 +229,17 @@ def job(args):
                 results.append({title: result})
     Color.print_focus(f'[+] {len(results)} feeds, {numb} articles')
 
+    # temp_path = root_path.joinpath('temp_data.json')
+    # with open(temp_path, 'w+') as f:
+    #     f.write(json.dumps(results, indent=4, ensure_ascii=False))
+    #     Color.print_focus(f'[+] temp data: {temp_path}')
+
     # 推送文章
     send_text(bots.get('text'), results)
     send_markdown(bots.get('markdown'), results)
+
+    # 更新today
+    update_today(results)
 
 
 def argument():

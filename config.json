@@ -1,7 +1,11 @@
 {
     "rss": {
+        "CustomRSS": {
+            "enabled": true,
+            "filename": "CustomRSS.opml"
+        },
         "CyberSecurityRSS": {
-            "enabled": false,
+            "enabled": true,
             "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
             "filename": "CyberSecurityRSS.opml"
         },
@@ -10,9 +14,20 @@
             "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/tiny.opml",
             "filename": "CyberSecurityRSS-tiny.opml"
         },
-        "CustomRSS": {
+        "Chinese-Security-RSS": {
             "enabled": true,
-            "filename": "CustomRSS.opml"
+            "url": "https://raw.githubusercontent.com/zhengjim/Chinese-Security-RSS/master/Chinese-Security-RSS.opml",
+            "filename": "Chinese-Security-RSS.opml"
+        },
+        "awesome-security-feed": {
+            "enabled": true,
+            "url": "https://raw.githubusercontent.com/mrtouch93/awesome-security-feed/main/security_feeds.opml",
+            "filename": "awesome-security-feed.opml"
+        },
+        "chinese-independent-blogs": {
+            "enabled": false,
+            "url": "https://raw.githubusercontent.com/timqian/chinese-independent-blogs/master/feed.opml",
+            "filename": "chinese-independent-blogs.opml"
         }
     },
 
@@ -24,7 +39,7 @@
             "msgtype": "text"
         },
         "wecom": {
-            "enabled": true,
+            "enabled": false,
             "secrets": "WECOM_KEY",
             "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
             "msgtype": "markdown"

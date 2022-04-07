@@ -4,7 +4,7 @@ name: Push Push
 
 # on:
 #   schedule:
-#     - cron: "0 0 20 ?"
+#     - cron: '0 3 * * *'  # 国际标准时间3点（北京时间11点）
 on:
   workflow_dispatch
 
@@ -26,3 +26,16 @@ jobs:
           WECOM_KEY: ${{ secrets.WECOM_KEY }}
           DINGTALK_KEY: ${{ secrets.DINGTALK_KEY }}
         run: python3 yarb.py --update
+
+      -name: Commit
+        run: |
+          git diff
+          git config --global user.email firmianay@gmail.com
+          git config --global user.name firmianay
+          git add *
+          git commit -m "Update: `date +'%Y-%m-%d'`"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

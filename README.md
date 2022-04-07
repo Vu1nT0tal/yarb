@@ -2,6 +2,8 @@
 
 另一个方便安全研究人员获取每日安全日报的爬虫和推送程序。支持导入 opml 文件从而批量订阅 RSS，因此可以订阅任何东西，而不局限于安全。
 
+**懒人福音，每日自动更新，点击右上角 Watch 即可：[每日安全资讯](./today.md)**
+
 - [yarb (Yet Another Rss Bot)](#yarb-yet-another-rss-bot)
   - [安装](#安装)
   - [运行](#运行)
@@ -22,7 +24,7 @@ $ python3 -m pip install -r requirements.txt
 
 ### 本地运行
 
-编辑配置文件 `config.json`，启用所需的订阅源和机器人。
+编辑配置文件 `config.json`，启用所需的订阅源和机器人（key 也可以通过环境变量传入）。
 
 ```sh
 $ ./yarb.py --help
@@ -56,23 +58,26 @@ $ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
 订阅源默认来自以下仓库，自动去重。
 
 - [CyberSecurityRSS](https://github.com/zer0yu/CyberSecurityRSS)
+- [Chinese-Security-RSS](https://github.com/zhengjim/Chinese-Security-RSS)
+- [awesome-security-feed](https://github.com/mrtouch93/awesome-security-feed)
+- [chinese-independent-blogs](https://github.com/timqian/chinese-independent-blogs)
 
 添加自定义订阅有两种方法：
 
-1. 在 `config.json` 中添加远程或本地仓库：
+1. 在 `config.json` 中添加本地或远程仓库：
 
 ```json
-"rss": {
-    "CyberSecurityRSS": {
-        "enabled": false,
-        "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
-        "filename": "CyberSecurityRSS.opml"
-    },
-    "CustomRSS": {
-        "enabled": true,
-        "filename": "CustomRSS.opml"
-    }
-},
+{
+    "rss": {
+        "CustomRSS": {
+            "enabled": true,
+            "filename": "CustomRSS.opml"
+        },
+        "CyberSecurityRSS": {
+            "enabled": true,
+            "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
+            "filename": "CyberSecurityRSS.opml"
+        },
 ```
 
 2. 在 `rss/CustomRSS.opml` 中添加链接：
