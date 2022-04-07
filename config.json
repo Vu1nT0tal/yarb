@@ -1,0 +1,26 @@
+{
+    "rss": {
+        "CyberSecurityRSS": {
+            "enabled": false,
+            "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
+            "filename": "CyberSecurityRSS.opml"
+        },
+        "CyberSecurityRSS-tiny": {
+            "enabled": true,
+            "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/tiny.opml",
+            "filename": "CyberSecurityRSS-tiny.opml"
+        },
+        "CustomRSS": {
+            "enabled": true,
+            "filename": "CustomRSS.opml"
+        }
+    },
+
+    "bot": {
+        "feishu": {
+            "enabled": true,
+            "secrets": "FEISHU_KEY",
+            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }
+    }
+}

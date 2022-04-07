@@ -1,0 +1,26 @@
+# https://docs.github.com/cn/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Push Push
+
+# on:
+#   schedule:
+#     - cron: "0 0 20 ?"
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Push articles
+        env:
+          FEISHU_KEY: ${{ secrets.FEISHU_KEY }}
+        run: python3 yarb.py --update

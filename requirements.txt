@@ -1,0 +1,6 @@
+requests
+feedparser
+pyfiglet
+colorama
+schedule
+git+https://github.com/kurtmckee/listparser@develop
