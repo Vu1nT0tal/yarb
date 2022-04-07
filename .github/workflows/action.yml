@@ -2,9 +2,10 @@
 
 name: Push Push
 
+# 国际标准时间3点（北京时间11点）
 # on:
 #   schedule:
-#     - cron: '0 3 * * *'  # 国际标准时间3点（北京时间11点）
+#     - cron: '0 3 * * *'
 on:
   workflow_dispatch
 
@@ -27,12 +28,12 @@ jobs:
           DINGTALK_KEY: ${{ secrets.DINGTALK_KEY }}
         run: python3 yarb.py --update
 
-      -name: Commit
+      - name: Commit
         run: |
           git diff
           git config --global user.email firmianay@gmail.com
           git config --global user.name firmianay
-          git add *
+          git add archive today.md
           git commit -m "Update: `date +'%Y-%m-%d'`"
 
       - name: Push changes
