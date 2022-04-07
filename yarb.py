@@ -10,9 +10,10 @@ import datetime
 import listparser
 import feedparser
 from pathlib import Path
+from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from bot import feishuBot
+from bot import *
 from utils import Color
 
 import requests
@@ -72,13 +73,14 @@ def parseThread(url: str):
 
 def init_bot(conf: dict):
     """初始化机器人"""
-    bots = []
-    bot_conf = conf['feishu']
-    if bot_conf['enabled']:
-        key = os.getenv(bot_conf['secrets'])
-        if not key:
-            key = bot_conf['key']
-        bots.append(feishuBot(key))
+    bots = defaultdict(list)
+    for k, v in conf.items():
+        if v['enabled']:
+            key = os.getenv(v['secrets'])
+            if not key:
+                key = v['key']
+            bot = globals()[f'{k}Bot'](key)
+            bots[v['msgtype']].append(bot)
     return bots
 
 
@@ -94,7 +96,7 @@ def init_rss(conf: dict, update: bool=False):
     else:
         for rss in temp_list:
             (key, value), = rss.items()
-            rss_list.append({key: root_path.joinpath(f'rss/{value.filename}')})
+            rss_list.append({key: root_path.joinpath(f'rss/{value["filename"]}')})
 
     # 合并相同链接
     feeds = []
@@ -108,6 +110,41 @@ def init_rss(conf: dict, update: bool=False):
 
     Color.print_focus(f'[+] {len(feeds)} feeds')
     return feeds
+
+
+def send_text(bots: list, results: list):
+    """发送text格式的消息"""
+    if not bots or not results:
+        return
+
+    Color.print_focus(f'[+] text: {str(bots)}')
+    for result in results:
+        (key, value), = result.items()
+        text = f'{key}\n\n'
+        for k, v in value.items():
+            text += f'{k}\n{v}\n\n'
+        text = text.strip()
+        print(text)
+
+        for bot in bots:
+            bot.send_text(text)
+
+
+def send_markdown(bots: list, results: list):
+    """发送markdown格式的消息"""
+    if not bots or not results:
+        return
+
+    Color.print_focus(f'[+] markdown: {str(bots)}')
+    for result in results:
+        (title, value), = result.items()
+        text = ''
+        for k, v in value.items():
+            text += f'> {k}\n\n[{v}]({v})\n'
+        print(text)
+
+        for bot in bots:
+            bot.send_markdown(title, text)
 
 
 def job(args):
@@ -141,16 +178,8 @@ def job(args):
     Color.print_focus(f'[+] {len(results)} feeds, {numb} articles')
 
     # 推送文章
-    for result in results:
-        (key, value), = result.items()
-        text = f'{key}\n\n'
-        for k, v in value.items():
-            text += f'{k}\n{v}\n\n'
-        text = text.strip()
-        print(text)
-
-        for bot in bots:
-            bot.send_text(text)
+    send_text(bots.get('text'), results)
+    send_markdown(bots.get('markdown'), results)
 
 
 def argument():

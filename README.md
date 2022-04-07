@@ -48,6 +48,8 @@ $ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
 目前支持的推送机器人及对应的 secrets：
 
 - [飞书群机器人](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)：`FEISHU_KEY`
+- [企业微信群机器人](https://developer.work.weixin.qq.com/document/path/91770)：`WECOM_KEY`
+- [钉钉群机器人](https://open.dingtalk.com/document/robots/custom-robot-access)：`DINGTALK_KEY`
 
 ## 订阅源
 

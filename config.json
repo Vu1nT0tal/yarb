@@ -20,7 +20,20 @@
         "feishu": {
             "enabled": true,
             "secrets": "FEISHU_KEY",
-            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "msgtype": "text"
+        },
+        "wecom": {
+            "enabled": true,
+            "secrets": "WECOM_KEY",
+            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "msgtype": "markdown"
+        },
+        "dingtalk": {
+            "enabled": false,
+            "secrets": "DINGTALK_KEY",
+            "key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "msgtype": "markdown"
         }
     }
 }
