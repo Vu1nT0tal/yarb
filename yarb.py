@@ -49,15 +49,17 @@ def update_today(data: list=[]):
         f2.write(content)
 
 
-def update_rss(rss: dict):
+def update_rss(rss: dict, proxy_url=''):
     """更新订阅源文件"""
+    proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+
     (key, value), = rss.items()
     rss_path = root_path.joinpath(f'rss/{value["filename"]}')
 
     result = None
     url = value.get('url')
     if url:
-        r = requests.get(value['url'])
+        r = requests.get(value['url'], proxies=proxy)
         if r.status_code == 200:
             with open(rss_path, 'w+') as f:
                 f.write(r.text)
@@ -75,12 +77,14 @@ def update_rss(rss: dict):
     return result
 
 
-def parseThread(url: str):
+def parseThread(url: str, proxy_url=''):
     """获取文章线程"""
+    proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+
     title = ''
     result = {}
     try:
-        r = requests.get(url, timeout=10, verify=False)
+        r = requests.get(url, timeout=10, verify=False, proxies=proxy)
         r = feedparser.parse(r.content)
         title = r.feed.title
         for entry in r.entries:
@@ -100,7 +104,7 @@ def parseThread(url: str):
     return title, result
 
 
-def init_bot(conf: dict):
+def init_bot(conf: dict, proxy_url=''):
     """初始化机器人"""
     bots = defaultdict(list)
     for k, v in conf.items():
@@ -114,18 +118,18 @@ def init_bot(conf: dict):
                 if bot[0].start_server(v['qq_id'], key):
                     bots[v['msgtype']] += bot
             else:
-                bot = globals()[f'{k}Bot'](key)
+                bot = globals()[f'{k}Bot'](key, proxy_url)
                 bots[v['msgtype']].append(bot)
     return bots
 
 
-def init_rss(conf: dict, update: bool=False):
+def init_rss(conf: dict, update: bool=False, proxy_url=''):
     """初始化订阅源"""
     temp_list = [{k: v} for k, v in conf.items() if v['enabled']]
     rss_list = []
     if update:
         for rss in temp_list:
-            rss = update_rss(rss)
+            rss = update_rss(rss, proxy_url)
             if rss:
                 rss_list.append(rss)
     else:
@@ -218,8 +222,12 @@ def job(args):
         config_path = root_path.joinpath('config.json')
     with open(config_path) as f:
         conf = json.load(f)
-    bots = init_bot(conf['bot'])
-    feeds = init_rss(conf['rss'], args.update)
+
+    proxy_bot = conf['proxy']['url'] if conf['proxy']['bot'] else ''
+    bots = init_bot(conf['bot'], proxy_bot)
+
+    proxy_rss = conf['proxy']['url'] if conf['proxy']['rss'] else ''
+    feeds = init_rss(conf['rss'], args.update, proxy_rss)
 
     # 获取文章
     results = []
@@ -227,7 +235,7 @@ def job(args):
     tasks = []
     with ThreadPoolExecutor(100) as executor:
         for url in feeds:
-            tasks.append(executor.submit(parseThread, url))
+            tasks.append(executor.submit(parseThread, url, proxy_rss))
         for task in as_completed(tasks):
             title, result = task.result()            
             if result:

@@ -14,13 +14,14 @@ class feishuBot:
     """飞书群机器人
     https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN
     """
-    def __init__(self, key) -> None:
+    def __init__(self, key, proxy_url='') -> None:
         self.key = key
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
     def send(self, data):
         headers = {'Content-Type': 'application/json'}
         url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data))
+        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
         if r.status_code == 200:
             Color.print_success('[+] feishuBot 发送成功')
@@ -42,13 +43,14 @@ class wecomBot:
     """企业微信群机器人
     https://developer.work.weixin.qq.com/document/path/91770
     """
-    def __init__(self, key) -> None:
+    def __init__(self, key, proxy_url='') -> None:
         self.key = key
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
     def send(self, data):
         headers = {'Content-Type': 'application/json'}
         url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data))
+        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
         if r.status_code == 200:
             Color.print_success('[+] wecomBot 发送成功')
@@ -69,13 +71,14 @@ class dingtalkBot:
     """钉钉群机器人
     https://open.dingtalk.com/document/robots/custom-robot-access
     """
-    def __init__(self, key) -> None:
+    def __init__(self, key, proxy_url='') -> None:
         self.key = key
-    
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+
     def send(self, data):
         headers = {'Content-Type': 'application/json'}
         url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data))
+        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
         if r.status_code == 200:
             Color.print_success('[+] dingtalkBot 发送成功')

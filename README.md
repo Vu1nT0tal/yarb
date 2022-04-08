@@ -24,7 +24,7 @@ $ cd yarb && ./install.sh
 
 ### 本地运行
 
-编辑配置文件 `config.json`，启用所需的订阅源和机器人（key 也可以通过环境变量传入）。
+编辑配置文件 `config.json`，启用所需的订阅源和机器人（key 也可以通过环境变量传入），最好启用代理。
 
 ```sh
 $ ./yarb.py --help
