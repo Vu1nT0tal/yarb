@@ -3,4 +3,5 @@ feedparser
 pyfiglet
 colorama
 schedule
+pyyaml
 git+https://github.com/kurtmckee/listparser@develop

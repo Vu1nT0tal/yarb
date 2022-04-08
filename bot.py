@@ -1,9 +1,13 @@
+import os
+import time
 import json
+import yaml
 import requests
+from pathlib import Path
 
 from utils import Color
 
-__all__ = ["feishuBot", "wecomBot", "dingtalkBot"]
+__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot"]
 
 
 class feishuBot:
@@ -19,9 +23,9 @@ class feishuBot:
         r = requests.post(url=url, headers=headers, data=json.dumps(data))
 
         if r.status_code == 200:
-            Color.print_success(f'[+] feishuBot 发送成功')
+            Color.print_success('[+] feishuBot 发送成功')
         else:
-            Color.print_failed(f'[-] feishuBot 发送失败')
+            Color.print_failed('[-] feishuBot 发送失败')
             print(r.text)
 
     def send_text(self, text):
@@ -47,9 +51,9 @@ class wecomBot:
         r = requests.post(url=url, headers=headers, data=json.dumps(data))
 
         if r.status_code == 200:
-            Color.print_success(f'[+] wecomBot 发送成功')
+            Color.print_success('[+] wecomBot 发送成功')
         else:
-            Color.print_failed(f'[-] wecomBot 发送失败')
+            Color.print_failed('[-] wecomBot 发送失败')
             print(r.text)
 
     def send_text(self, text):
@@ -74,9 +78,9 @@ class dingtalkBot:
         r = requests.post(url=url, headers=headers, data=json.dumps(data))
 
         if r.status_code == 200:
-            Color.print_success(f'[+] dingtalkBot 发送成功')
+            Color.print_success('[+] dingtalkBot 发送成功')
         else:
-            Color.print_failed(f'[-] dingtalkBot 发送失败')
+            Color.print_failed('[-] dingtalkBot 发送失败')
             print(r.text)
 
     def send_text(self, text):
@@ -86,3 +90,55 @@ class dingtalkBot:
     def send_markdown(self, title, text):
         data = {"msgtype": "markdown", "markdown": {"title": title, "text": text}}
         self.send(data)
+
+
+class qqBot:
+    """QQ群机器人
+    https://github.com/Mrs4s/go-cqhttp
+    """
+    cqhttp_path = Path(__file__).absolute().parent.joinpath('cqhttp')
+
+    def __init__(self, group_id) -> None:
+        self.server = 'http://127.0.0.1:5700'
+        self.group_id = group_id
+
+    def send_text(self, text):
+        try:
+            r = requests.post(f'{self.server}/send_group_msg?group_id={self.group_id}&&message={text}')
+            if r.status_code == 200:
+                Color.print_success('[+] qqBot 发送成功')
+            else:
+                Color.print_failed('[-] qqBot 发送失败')
+        except Exception as e:
+            Color.print_failed('[-] qqBot 发送失败')
+            print(e)
+
+    def start_server(self, qq_id, qq_passwd, timeout=60):
+        config_path = self.cqhttp_path.joinpath('config.yml')
+        with open(config_path, 'r') as f:
+            data = yaml.load(f, Loader=yaml.FullLoader)
+            data['account']['uin'] = int(qq_id)
+            data['account']['password'] = qq_passwd
+        with open(config_path, 'w+') as f:
+            yaml.dump(data, f)
+
+        os.system('cd cqhttp && ./go-cqhttp -d')
+
+        timeout = time.time() + timeout
+        while True:
+            try:
+                requests.get(self.server)
+                Color.print_success('[+] qqBot 启动成功')
+                return True
+            except Exception as e:
+                time.sleep(1)
+
+            if time.time() > timeout:
+                qqBot.kill_server()
+                Color.print_failed('[-] qqBot 启动失败')
+                return False
+
+    @classmethod
+    def kill_server(cls):
+        pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
+        os.system(f'cat {pid_path} | xargs kill')

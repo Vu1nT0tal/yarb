@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
-<head>
-<title>CustomRSS</title>
-</head>
+<head><title>CustomRSS</title></head>
 <body>
+<outline xmlUrl="https://rsshub.app/hackerone/hacktivity" title="HackerOne Hacker Activity" text="HackerOne Hacker Activity" type="rss" htmlUrl="https://hackerone.com/hacktivity" />
 </body>
 </opml>

@@ -108,8 +108,14 @@ def init_bot(conf: dict):
             key = os.getenv(v['secrets'])
             if not key:
                 key = v['key']
-            bot = globals()[f'{k}Bot'](key)
-            bots[v['msgtype']].append(bot)
+
+            if k == 'qq':
+                bot = [globals()[f'{k}Bot'](g) for g in v['group_id']]
+                if bot[0].start_server(v['qq_id'], key):
+                    bots[v['msgtype']] += bot
+            else:
+                bot = globals()[f'{k}Bot'](key)
+                bots[v['msgtype']].append(bot)
     return bots
 
 
@@ -158,7 +164,7 @@ def send_text(bots: list, results: list):
     text = ''
     for result in results:
         (key, value), = result.items()
-        text += f'{key}\n\n'
+        text += f'[{key}]\n\n'
         for k, v in value.items():
             text += f'{k}\n{v}\n\n'
             num1 += 1
@@ -237,6 +243,7 @@ def job(args):
     # 推送文章
     send_text(bots.get('text'), results)
     send_markdown(bots.get('markdown'), results)
+    qqBot.kill_server()   # 关闭cqhttp
 
     # 更新today
     update_today(results)

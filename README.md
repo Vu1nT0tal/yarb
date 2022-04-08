@@ -2,7 +2,7 @@
 
 另一个方便安全研究人员获取每日安全日报的爬虫和推送程序。支持导入 opml 文件从而批量订阅 RSS，因此可以订阅任何东西，而不局限于安全。
 
-**懒人福音，每日自动更新，点击右上角 Watch 即可：[每日安全资讯](./today.md)**
+**懒人福音，每日自动更新，点击右上角 Watch 即可：[每日安全资讯](./today.md)，[历史存档](./archive)**
 
 - [yarb (Yet Another Rss Bot)](#yarb-yet-another-rss-bot)
   - [安装](#安装)
@@ -16,8 +16,8 @@
 ## 安装
 
 ```sh
-$ git clone https://github.com/firmianay/yarb.git && cd yarb
-$ python3 -m pip install -r requirements.txt
+$ git clone https://github.com/firmianay/yarb.git
+$ cd yarb && ./install.sh
 ```
 
 ## 运行
@@ -52,6 +52,7 @@ $ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
 - [飞书群机器人](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)：`FEISHU_KEY`
 - [企业微信群机器人](https://developer.work.weixin.qq.com/document/path/91770)：`WECOM_KEY`
 - [钉钉群机器人](https://open.dingtalk.com/document/robots/custom-robot-access)：`DINGTALK_KEY`
+- [QQ群机器人](https://github.com/Mrs4s/go-cqhttp)：`QQ_KEY`（需要关闭登录设备锁）
 
 ## 订阅源
 
@@ -68,16 +69,16 @@ $ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
 
 ```json
 {
-    "rss": {
-        "CustomRSS": {
-            "enabled": true,
-            "filename": "CustomRSS.opml"
-        },
-        "CyberSecurityRSS": {
-            "enabled": true,
-            "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
-            "filename": "CyberSecurityRSS.opml"
-        },
+  "rss": {
+      "CustomRSS": {
+          "enabled": true,
+          "filename": "CustomRSS.opml"
+      },
+      "CyberSecurityRSS": {
+          "enabled": true,
+          "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/CyberSecurityRSS.opml",
+          "filename": "CyberSecurityRSS.opml"
+      },
 ```
 
 2. 在 `rss/CustomRSS.opml` 中添加链接：
@@ -85,10 +86,9 @@ $ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
 ```opml
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
-<head>
-<title>CustomRSS</title>
-</head>
+<head><title>CustomRSS</title></head>
 <body>
+<outline xmlUrl="https://rsshub.app/hackerone/hacktivity" title="HackerOne Hacker Activity" text="HackerOne Hacker Activity" type="rss" htmlUrl="https://hackerone.com/hacktivity" />
 </body>
 </opml>
 ```

@@ -19,14 +19,14 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: ./install.sh
 
       - name: Push articles
         env:
           FEISHU_KEY: ${{ secrets.FEISHU_KEY }}
           WECOM_KEY: ${{ secrets.WECOM_KEY }}
           DINGTALK_KEY: ${{ secrets.DINGTALK_KEY }}
-        run: python3 yarb.py --update
+        run: python3 yarb.py
 
       - name: Commit
         run: |
@@ -34,7 +34,7 @@ jobs:
           git config --global user.email firmianay@gmail.com
           git config --global user.name firmianay
           git add archive today.md
-          git commit -m "Update: `date +'%Y-%m-%d'`"
+          git commit -m "每日安全资讯（`date +'%Y-%m-%d'`）"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
