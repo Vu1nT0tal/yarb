@@ -37,10 +37,10 @@ optional arguments:
   --config CONFIG  Use specified config file
 
 # 单次任务
-$ ./yarb.py --update
+$ ./yarb.py
 
 # 每日定时任务
-$ nohup ./yarb.py --update --cron 11:00 > run.log 2>&1 &
+$ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 ```
 
 ### Github Actions
