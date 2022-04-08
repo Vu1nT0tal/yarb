@@ -3,11 +3,15 @@ import time
 import json
 import yaml
 import requests
+import smtplib
+from email.header import Header
+from email.mime.text import MIMEText
 from pathlib import Path
+from datetime import datetime
 
 from utils import Color
 
-__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot"]
+__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "mailBot"]
 
 
 class feishuBot:
@@ -144,4 +148,39 @@ class qqBot:
     @classmethod
     def kill_server(cls):
         pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
-        os.system(f'cat {pid_path} | xargs kill')
+        os.system(f'cat {pid_path} | xargs kill >/dev/null 2>&1')
+
+
+class mailBot:
+    """邮件机器人
+    """
+    def __init__(self, sender, passwd, receiver: list, server='') -> None:
+        self.sender = sender
+        self.receiver = receiver
+        server = server if server else self.get_server(sender)
+
+        self.smtp = smtplib.SMTP_SSL(server)
+        self.smtp.login(sender, passwd)
+
+    def get_server(self, sender):
+        key = sender.rstrip('.com').split('@')[-1]
+        server = {
+            'qq': 'smtp.qq.com',
+            'foxmail': 'smtp.qq.com',
+            '163': 'smtp.163.com',
+            'sina': 'smtp.sina.com',
+            'gmail': 'smtp.gmail.com',
+            'outlook': 'smtp.live.com',
+        }
+        if key in server:
+            return server[key]
+        else:
+            return f'smtp.{key}.com'
+
+    def send_long_text(self, text):
+        today = datetime.now().strftime("%Y-%m-%d")
+        msg = MIMEText(text)
+        msg['Subject'] = Header(f'每日安全资讯（{today}）')
+        msg['From'] = 'yarb-security-bot'
+
+        self.smtp.sendmail(self.sender, self.receiver, msg.as_string())

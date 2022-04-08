@@ -117,6 +117,9 @@ def init_bot(conf: dict, proxy_url=''):
                 bot = [globals()[f'{k}Bot'](g) for g in v['group_id']]
                 if bot[0].start_server(v['qq_id'], key):
                     bots[v['msgtype']] += bot
+            elif k == 'mail':
+                bot = globals()[f'{k}Bot'](v['address'], key, v['receiver'], v['server'])
+                bots[v['msgtype']].append(bot)
             else:
                 bot = globals()[f'{k}Bot'](key, proxy_url)
                 bots[v['msgtype']].append(bot)
@@ -209,6 +212,24 @@ def send_markdown(bots: list, results: list):
             bot.send_markdown(title, text)
 
 
+def send_long_text(bots: list, results: list):
+    """发送长文本"""
+    if not bots or not results:
+        return
+    Color.print_focus(f'[+] long_text: {str(bots)}')
+
+    text = ''
+    for result in results:
+        (key, value), = result.items()
+        text += f'[{key}]\n\n'
+        for k, v in value.items():
+            text += f'{k}\n{v}\n\n'
+    print(text)
+
+    for bot in bots:
+        bot.send_long_text(text)
+
+
 def job(args):
     """定时任务"""
     print(pyfiglet.figlet_format('yarb'))
@@ -251,6 +272,7 @@ def job(args):
     # 推送文章
     send_text(bots.get('text'), results)
     send_markdown(bots.get('markdown'), results)
+    send_long_text(bots.get('long_text'), results)
     qqBot.kill_server()   # 关闭cqhttp
 
     # 更新today

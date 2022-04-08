@@ -53,6 +53,7 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 - [企业微信群机器人](https://developer.work.weixin.qq.com/document/path/91770)：`WECOM_KEY`
 - [钉钉群机器人](https://open.dingtalk.com/document/robots/custom-robot-access)：`DINGTALK_KEY`
 - [QQ群机器人](https://github.com/Mrs4s/go-cqhttp)：`QQ_KEY`（需要关闭登录设备锁）
+- [邮件机器人](https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256)：`MAIL_KEY`（需要申请授权码）
 
 ## 订阅源
 

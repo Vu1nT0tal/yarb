@@ -62,6 +62,15 @@
             "group_id": ["808542982", "217863340"],
             "key": "xxxxxxxxxx",
             "msgtype": "text"
+        },
+        "mail": {
+            "enabled": true,
+            "secrets": "MAIL_KEY",
+            "address": "2419110059@qq.com",
+            "server": "smtp.qq.com",
+            "receiver": ["2419110059@qq.com"],
+            "key": "xxxxxxxxxx",
+            "msgtype": "long_text"
         }
     }
 }
