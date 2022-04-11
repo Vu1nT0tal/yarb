@@ -1,17 +1,16 @@
 # yarb (Yet Another Rss Bot)
 
-另一个方便安全研究人员获取每日安全日报的爬虫和推送程序。支持导入 opml 文件从而批量订阅 RSS，因此可以订阅任何东西，而不局限于安全。
+一个方便获取每日安全资讯的爬虫和推送程序。支持导入 opml 文件，因此也可以订阅其他任何 RSS 源。
 
 **懒人福音，每日自动更新，点击右上角 Watch 即可：[每日安全资讯](./today.md)，[历史存档](./archive)**
 
 - [yarb (Yet Another Rss Bot)](#yarb-yet-another-rss-bot)
   - [安装](#安装)
   - [运行](#运行)
-    - [本地运行](#本地运行)
+    - [本地搭建](#本地搭建)
     - [Github Actions](#github-actions)
   - [订阅源](#订阅源)
-  - [开源协议](#开源协议)
-  - [Stargazers over time](#stargazers-over-time)
+  - [LICENSE](#license)
 
 ## 安装
 
@@ -22,7 +21,7 @@ $ cd yarb && ./install.sh
 
 ## 运行
 
-### 本地运行
+### 本地搭建
 
 编辑配置文件 `config.json`，启用所需的订阅源和机器人（key 也可以通过环境变量传入），最好启用代理。
 
@@ -45,7 +44,7 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 
 ### Github Actions
 
-利用 Github Actions 提供的服务，你只需要 fork 本项目，在 Settings 中添加 Actions secrets，就部署完成了。
+利用 Github Actions 提供的服务，你只需要 fork 本项目，在 Settings 中添加 secrets，即可完成部署。
 
 目前支持的推送机器人及对应的 secrets：
 
@@ -94,10 +93,8 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 </opml>
 ```
 
-## 开源协议
+## LICENSE
 
 yarb use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
-
-## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/firmianay/yarb.svg)](https://starchart.cc/firmianay/yarb)
