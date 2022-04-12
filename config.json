@@ -70,7 +70,7 @@
             "server": "smtp.qq.com",
             "receiver": ["2419110059@qq.com"],
             "key": "xxxxxxxxxx",
-            "msgtype": "long_text"
+            "msgtype": "html"
         }
     }
 }

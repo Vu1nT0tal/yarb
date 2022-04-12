@@ -19,10 +19,11 @@ from utils import Color
 import requests
 requests.packages.urllib3.disable_warnings()
 
+today = datetime.datetime.now().strftime("%Y-%m-%d")
+
 
 def update_today(data: list=[]):
     """更新today"""
-    today = datetime.datetime.now().strftime("%Y-%m-%d")
     root_path = Path(__file__).absolute().parent
     data_path = root_path.joinpath('temp_data.json')
     today_path = root_path.joinpath('today.md')
@@ -161,7 +162,7 @@ def init_rss(conf: dict, update: bool=False, proxy_url=''):
 
 
 def send_text(bots: list, results: list):
-    """发送text格式的消息"""
+    """发送多条text格式的文本"""
     if not bots or not results:
         return
     Color.print_focus(f'[+] text: {str(bots)}')
@@ -196,7 +197,7 @@ def send_text(bots: list, results: list):
 
 
 def send_markdown(bots: list, results: list):
-    """发送markdown格式的消息"""
+    """发送多条markdown格式的文本"""
     if not bots or not results:
         return
 
@@ -213,7 +214,7 @@ def send_markdown(bots: list, results: list):
 
 
 def send_long_text(bots: list, results: list):
-    """发送长文本"""
+    """发送单条长文本"""
     if not bots or not results:
         return
     Color.print_focus(f'[+] long_text: {str(bots)}')
@@ -224,16 +225,33 @@ def send_long_text(bots: list, results: list):
         text += f'[{key}]\n\n'
         for k, v in value.items():
             text += f'{k}\n{v}\n\n'
-    print(text)
 
     for bot in bots:
         bot.send_long_text(text)
 
 
+def send_html(bots: list, results: list):
+    """发送单条HTML文本"""
+    if not bots or not results:
+        return
+    Color.print_focus(f'[+] html: {str(bots)}')
+
+    text = f'<html><head><h1>每日安全资讯（{today}）</h1></head><body>'
+    for result in results:
+        (key, value), = result.items()
+        text += f'<h3>{key}</h3><ul>'
+        for k, v in value.items():
+            text += f'<li><a href="{v}">{k}</a></li>'
+        text += '</ul>'
+    text += '</body></html>'
+
+    for bot in bots:
+        bot.send_html(text)
+
+
 def job(args):
     """定时任务"""
-    print(pyfiglet.figlet_format('yarb'))
-    print(datetime.datetime.now())
+    print(f'{pyfiglet.figlet_format("yarb")}\n{today}')
 
     global root_path
     root_path = Path(__file__).absolute().parent
@@ -272,7 +290,7 @@ def job(args):
     # 推送文章
     send_text(bots.get('text'), results)
     send_markdown(bots.get('markdown'), results)
-    send_long_text(bots.get('long_text'), results)
+    send_html(bots.get('html'), results)
     qqBot.kill_server()   # 关闭cqhttp
 
     # 更新today

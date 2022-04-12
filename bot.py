@@ -147,8 +147,11 @@ class qqBot:
 
     @classmethod
     def kill_server(cls):
-        pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
-        os.system(f'cat {pid_path} | xargs kill >/dev/null 2>&1')
+        try:
+            pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
+            os.system(f'cat {pid_path} >/dev/null 2>&1 | xargs kill')
+        except Exception as e:
+            pass
 
 
 class mailBot:
@@ -177,10 +180,12 @@ class mailBot:
         else:
             return f'smtp.{key}.com'
 
-    def send_long_text(self, text):
+    def send_html(self, text):
         today = datetime.now().strftime("%Y-%m-%d")
-        msg = MIMEText(text)
+
+        msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
-        msg['From'] = 'yarb-security-bot'
+        msg['From'] = f'security-bot <{self.sender}>'
+        msg['To'] = ','.join(self.receiver)
 
         self.smtp.sendmail(self.sender, self.receiver, msg.as_string())
