@@ -40,28 +40,30 @@
         "feishu": {
             "enabled": true,
             "secrets": "FEISHU_KEY",
-            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "msgtype": "text"
+            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         },
         "wecom": {
             "enabled": false,
             "secrets": "WECOM_KEY",
-            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "msgtype": "markdown"
+            "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         },
         "dingtalk": {
             "enabled": false,
             "secrets": "DINGTALK_KEY",
-            "key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-            "msgtype": "markdown"
+            "key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         },
         "qq": {
             "enabled": true,
             "secrets": "QQ_KEY",
             "qq_id": "2419110059",
             "group_id": ["808542982", "217863340"],
-            "key": "xxxxxxxxxx",
-            "msgtype": "text"
+            "key": "xxxxxxxxxx"
+        },
+        "telegram":{
+            "enabled": true,
+            "secrets": "TELEGRAM_KEY",
+            "chat_id": ["-799557100"],
+            "key": "xxxxxxxxxx"
         },
         "mail": {
             "enabled": true,
@@ -69,8 +71,7 @@
             "address": "2419110059@qq.com",
             "server": "smtp.qq.com",
             "receiver": ["2419110059@qq.com"],
-            "key": "xxxxxxxxxx",
-            "msgtype": "html"
+            "key": "xxxxxxxxxx"
         }
     }
 }

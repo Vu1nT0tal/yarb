@@ -28,7 +28,6 @@ $ cd yarb && ./install.sh
 ```sh
 $ ./yarb.py --help
 usage: yarb.py [-h] [--update] [--cron CRON] [--config CONFIG]
-
 optional arguments:
   -h, --help       show this help message and exit
   --update         Update RSS config file
@@ -48,11 +47,12 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 
 目前支持的推送机器人及对应的 secrets：
 
+- [邮件机器人](https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256)：`MAIL_KEY`（需要申请授权码）（订阅较多时推荐）
 - [飞书群机器人](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)：`FEISHU_KEY`
 - [企业微信群机器人](https://developer.work.weixin.qq.com/document/path/91770)：`WECOM_KEY`
 - [钉钉群机器人](https://open.dingtalk.com/document/robots/custom-robot-access)：`DINGTALK_KEY`
 - [QQ群机器人](https://github.com/Mrs4s/go-cqhttp)：`QQ_KEY`（需要关闭登录设备锁）
-- [邮件机器人](https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256)：`MAIL_KEY`（需要申请授权码）（订阅较多时推荐）
+- [Telegram机器人](https://core.telegram.org/bots/api): `TELEGRAM_KEY`（需要代理）
 
 ## 订阅源
 

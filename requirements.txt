@@ -4,4 +4,6 @@ pyfiglet
 colorama
 schedule
 pyyaml
+python-telegram-bot
+PySocks
 git+https://github.com/kurtmckee/listparser@develop

@@ -2,6 +2,7 @@ import os
 import time
 import json
 import yaml
+import telegram
 import requests
 import smtplib
 from email.header import Header
@@ -11,7 +12,8 @@ from datetime import datetime
 
 from utils import Color
 
-__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "mailBot"]
+__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "telegramBot", "mailBot"]
+today = datetime.now().strftime("%Y-%m-%d")
 
 
 class feishuBot:
@@ -22,22 +24,32 @@ class feishuBot:
         self.key = key
         self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
-    def send(self, data):
-        headers = {'Content-Type': 'application/json'}
-        url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+    @staticmethod
+    def parse_results(results: list):
+        text_list = []
+        for result in results:
+            (feed, value), = result.items()
+            text = f'[ {feed} ]\n\n'
+            for title, link in value.items():
+                text += f'{title}\n{link}\n\n'
+            text_list.append(text.strip())
+        return text_list
 
-        if r.status_code == 200:
-            Color.print_success('[+] feishuBot 发送成功')
-        else:
-            Color.print_failed('[-] feishuBot 发送失败')
-            print(r.text)
+    def send(self, text_list: list):
+        for text in text_list:
+            print(text)
+            data = {"msg_type": "text", "content": {"text": text}}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
+            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
-    def send_text(self, text):
-        data = {"msg_type": "text", "content": {"text": text}}
-        self.send(data)
+            if r.status_code == 200:
+                Color.print_success('[+] feishuBot 发送成功')
+            else:
+                Color.print_failed('[-] feishuBot 发送失败')
+                print(r.text)
 
-    def send_markdown(self, title, text):
+    def send_markdown(self, text):
         # TODO 富文本
         data = {"msg_type": "text", "content": {"text": text}}
         self.send(data)
@@ -51,24 +63,37 @@ class wecomBot:
         self.key = key
         self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
-    def send(self, data):
-        headers = {'Content-Type': 'application/json'}
-        url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+    @staticmethod
+    def parse_results(results: list):
+        text_list = []
+        for result in results:
+            (feed, value), = result.items()
+            text = f'## {feed}\n'
+            for title, link in value.items():
+                text += f'- [{title}]({link})\n'
+            text_list.append(text.strip())
+        return text_list
 
-        if r.status_code == 200:
-            Color.print_success('[+] wecomBot 发送成功')
-        else:
-            Color.print_failed('[-] wecomBot 发送失败')
-            print(r.text)
+    def send(self, text_list: list):
+        num = 0
+        for text in text_list:
+            print(text)
+            data = {"msgtype": "markdown", "markdown": {"content": text}}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
+            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
-    def send_text(self, text):
-        data = {"msgtype": "text", "text": {"content": text}}
-        self.send(data)
+            if r.status_code == 200:
+                Color.print_success('[+] wecomBot 发送成功')
+            else:
+                Color.print_failed('[-] wecomBot 发送失败')
+                print(r.text)
 
-    def send_markdown(self, title, text):
-        data = {"msgtype": "markdown", "markdown": {"content": f'## {title}\n{text}'}}
-        self.send(data)
+            # 频率限制，最多20条/分钟
+            num += 1
+            if num >= 20:
+                time.sleep(60)
+                num = 0
 
 
 class dingtalkBot:
@@ -79,24 +104,37 @@ class dingtalkBot:
         self.key = key
         self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
 
-    def send(self, data):
-        headers = {'Content-Type': 'application/json'}
-        url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
-        r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+    @staticmethod
+    def parse_results(results: list):
+        text_list = []
+        for result in results:
+            (feed, value), = result.items()
+            text = ''
+            for title, link in value.items():
+                text += f'- [{title}]({link})\n'
+            text_list.append([feed, text.strip()])
+        return text_list
 
-        if r.status_code == 200:
-            Color.print_success('[+] dingtalkBot 发送成功')
-        else:
-            Color.print_failed('[-] dingtalkBot 发送失败')
-            print(r.text)
+    def send(self, text_list: list):
+        num = 0
+        for (feed, text) in text_list:
+            print(text)
+            data = {"msgtype": "markdown", "markdown": {"title": feed, "text": text}}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
+            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
-    def send_text(self, text):
-        data = {"msgtype": "text", "text": {"content": text}}
-        self.send(data)
+            if r.status_code == 200:
+                Color.print_success('[+] dingtalkBot 发送成功')
+            else:
+                Color.print_failed('[-] dingtalkBot 发送失败')
+                print(r.text)
 
-    def send_markdown(self, title, text):
-        data = {"msgtype": "markdown", "markdown": {"title": title, "text": text}}
-        self.send(data)
+            # 频率限制，最多20条/分钟
+            num += 1
+            if num >= 20:
+                time.sleep(60)
+                num = 0
 
 
 class qqBot:
@@ -105,20 +143,41 @@ class qqBot:
     """
     cqhttp_path = Path(__file__).absolute().parent.joinpath('cqhttp')
 
-    def __init__(self, group_id) -> None:
+    def __init__(self, group_id: list) -> None:
         self.server = 'http://127.0.0.1:5700'
         self.group_id = group_id
 
-    def send_text(self, text):
-        try:
-            r = requests.post(f'{self.server}/send_group_msg?group_id={self.group_id}&&message={text}')
-            if r.status_code == 200:
-                Color.print_success('[+] qqBot 发送成功')
-            else:
-                Color.print_failed('[-] qqBot 发送失败')
-        except Exception as e:
-            Color.print_failed('[-] qqBot 发送失败')
-            print(e)
+    @staticmethod
+    def parse_results(results: list):
+        text_list = []
+        for result in results:
+            (feed, value), = result.items()
+            text = f'[ {feed} ]\n\n'
+            for title, link in value.items():
+                text += f'{title}\n{link}\n\n'
+            text_list.append(text.strip())
+        return text_list
+
+    def send(self, text_list: list):
+        num = 0
+        for text in text_list:
+            print(text)
+            for id in self.group_id:
+                try:
+                    r = requests.post(f'{self.server}/send_group_msg?group_id={id}&&message={text}')
+                    if r.status_code == 200:
+                        Color.print_success(f'[+] qqBot 发送成功 {id}')
+                    else:
+                        Color.print_failed(f'[-] qqBot 发送失败 {id}')
+                except Exception as e:
+                    Color.print_failed(f'[-] qqBot 发送失败 {id}')
+                    print(e)
+
+            # 频率限制，最多20条/分钟
+            num += 1
+            if num >= 20:
+                time.sleep(60)
+                num = 0
 
     def start_server(self, qq_id, qq_passwd, timeout=60):
         config_path = self.cqhttp_path.joinpath('config.yml')
@@ -165,7 +224,7 @@ class mailBot:
         self.smtp = smtplib.SMTP_SSL(server)
         self.smtp.login(sender, passwd)
 
-    def get_server(self, sender):
+    def get_server(self, sender: str):
         key = sender.rstrip('.com').split('@')[-1]
         server = {
             'qq': 'smtp.qq.com',
@@ -180,12 +239,62 @@ class mailBot:
         else:
             return f'smtp.{key}.com'
 
-    def send_html(self, text):
-        today = datetime.now().strftime("%Y-%m-%d")
+    @staticmethod
+    def parse_results(results: list):
+        text = f'<html><head><h1>每日安全资讯（{today}）</h1></head><body>'
+        for result in results:
+            (feed, value), = result.items()
+            text += f'<h3>{feed}</h3><ul>'
+            for title, link in value.items():
+                text += f'<li><a href="{link}">{title}</a></li>'
+            text += '</ul>'
+        text += '</body></html>'
+        return text
 
+    def send(self, text: str):
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
         msg['From'] = f'security-bot <{self.sender}>'
         msg['To'] = ','.join(self.receiver)
 
         self.smtp.sendmail(self.sender, self.receiver, msg.as_string())
+
+
+class telegramBot:
+    """Telegram机器人
+    https://core.telegram.org/bots/api
+    """
+    def __init__(self, key, chat_id: list, proxy_url='') -> None:
+        proxy = telegram.utils.request.Request(proxy_url=proxy_url)
+        self.chat_id = chat_id
+        self.bot = telegram.Bot(token=key, request=proxy)
+
+    def test_connect(self):
+        try:
+            self.bot.get_me()
+            return True
+        except Exception as e:
+            Color.print_failed('[-] telegramBot 连接失败')
+            return False
+
+    @staticmethod
+    def parse_results(results: list):
+        text_list = []
+        for result in results:
+            (feed, value), = result.items()
+            text = f'<b>{feed}</b>\n'
+            for idx, (title, link) in enumerate(value.items()):
+                text += f'{idx+1}. <a href="{link}">{title}</a>\n'
+            text_list.append(text.strip())
+        return text_list
+
+    def send(self, text_list: list):
+        for text in text_list:
+            print(text)
+            for id in self.chat_id:
+                try:
+                    self.bot.send_message(chat_id=id, text=text, parse_mode='HTML')
+                    Color.print_success(f'[+] telegramBot 发送成功 {id}')
+                except Exception as e:
+                    Color.print_failed(f'[-] telegramBot 发送失败 {id}')
+                    print(e)

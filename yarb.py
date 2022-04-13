@@ -10,7 +10,6 @@ import datetime
 import listparser
 import feedparser
 from pathlib import Path
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from bot import *
@@ -107,23 +106,27 @@ def parseThread(url: str, proxy_url=''):
 
 def init_bot(conf: dict, proxy_url=''):
     """初始化机器人"""
-    bots = defaultdict(list)
-    for k, v in conf.items():
+    bots = []
+    for name, v in conf.items():
         if v['enabled']:
             key = os.getenv(v['secrets'])
             if not key:
                 key = v['key']
 
-            if k == 'qq':
-                bot = [globals()[f'{k}Bot'](g) for g in v['group_id']]
-                if bot[0].start_server(v['qq_id'], key):
-                    bots[v['msgtype']] += bot
-            elif k == 'mail':
-                bot = globals()[f'{k}Bot'](v['address'], key, v['receiver'], v['server'])
-                bots[v['msgtype']].append(bot)
+            if name == 'qq':
+                bot = globals()[f'{name}Bot'](v['group_id'])
+                if bot.start_server(v['qq_id'], key):
+                    bots.append(bot)
+            elif name == 'telegram':
+                bot = globals()[f'{name}Bot'](key, v['chat_id'], proxy_url)
+                if bot.test_connect():
+                    bots.append(bot)
+            elif name == 'mail':
+                bot = globals()[f'{name}Bot'](v['address'], key, v['receiver'], v['server'])
+                bots.append(bot)
             else:
-                bot = globals()[f'{k}Bot'](key, proxy_url)
-                bots[v['msgtype']].append(bot)
+                bot = globals()[f'{name}Bot'](key, proxy_url)
+                bots.append(bot)
     return bots
 
 
@@ -159,94 +162,6 @@ def init_rss(conf: dict, update: bool=False, proxy_url=''):
 
     Color.print_focus(f'[+] {len(feeds)} feeds')
     return feeds
-
-
-def send_text(bots: list, results: list):
-    """发送多条text格式的文本"""
-    if not bots or not results:
-        return
-    Color.print_focus(f'[+] text: {str(bots)}')
-
-    num1 = 0
-    num2 = 0
-    text = ''
-    for result in results:
-        (key, value), = result.items()
-        text += f'[{key}]\n\n'
-        for k, v in value.items():
-            text += f'{k}\n{v}\n\n'
-            num1 += 1
-
-        # 合并消息，最少10行/条
-        if num1 >= 10:
-            text = text.strip()
-            print(text)
-
-            # 发送
-            for bot in bots:
-                bot.send_text(text)
-
-            # 频率限制，最多20条/分钟
-            num2 += 1
-            if num2 >= 20:
-                time.sleep(60)
-
-            # 恢复
-            num1 = 0
-            text = ''
-
-
-def send_markdown(bots: list, results: list):
-    """发送多条markdown格式的文本"""
-    if not bots or not results:
-        return
-
-    Color.print_focus(f'[+] markdown: {str(bots)}')
-    for result in results:
-        (title, value), = result.items()
-        text = ''
-        for k, v in value.items():
-            text += f'> {k}\n\n[{v}]({v})\n'
-        print(text)
-
-        for bot in bots:
-            bot.send_markdown(title, text)
-
-
-def send_long_text(bots: list, results: list):
-    """发送单条长文本"""
-    if not bots or not results:
-        return
-    Color.print_focus(f'[+] long_text: {str(bots)}')
-
-    text = ''
-    for result in results:
-        (key, value), = result.items()
-        text += f'[{key}]\n\n'
-        for k, v in value.items():
-            text += f'{k}\n{v}\n\n'
-
-    for bot in bots:
-        bot.send_long_text(text)
-
-
-def send_html(bots: list, results: list):
-    """发送单条HTML文本"""
-    if not bots or not results:
-        return
-    Color.print_focus(f'[+] html: {str(bots)}')
-
-    text = f'<html><head><h1>每日安全资讯（{today}）</h1></head><body>'
-    for result in results:
-        (key, value), = result.items()
-        text += f'<h3>{key}</h3><ul>'
-        for k, v in value.items():
-            text += f'<li><a href="{v}">{k}</a></li>'
-        text += '</ul>'
-    text += '</body></html>'
-
-    for bot in bots:
-        bot.send_html(text)
 
 
 def job(args):
@@ -288,9 +203,8 @@ def job(args):
     #     Color.print_focus(f'[+] temp data: {temp_path}')
 
     # 推送文章
-    send_text(bots.get('text'), results)
-    send_markdown(bots.get('markdown'), results)
-    send_html(bots.get('html'), results)
+    for bot in bots:
+        bot.send(bot.parse_results(results))
     qqBot.kill_server()   # 关闭cqhttp
 
     # 更新today
