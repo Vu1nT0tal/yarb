@@ -57,20 +57,18 @@ def update_rss(rss: dict, proxy_url=''):
     rss_path = root_path.joinpath(f'rss/{value["filename"]}')
 
     result = None
-    url = value.get('url')
-    if url:
+    if url := value.get('url'):
         r = requests.get(value['url'], proxies=proxy)
         if r.status_code == 200:
             with open(rss_path, 'w+') as f:
                 f.write(r.text)
             print(f'[+] 更新完成：{key}')
             result = {key: rss_path}
+        elif rss_path.exists():
+            print(f'[-] 更新失败，使用旧文件：{key}')
+            result = {key: rss_path}
         else:
-            if rss_path.exists():
-                print(f'[-] 更新失败，使用旧文件：{key}')
-                result = {key: rss_path}
-            else:
-                print(f'[-] 更新失败，跳过：{key}')
+            print(f'[-] 更新失败，跳过：{key}')
     else:
         print(f'[+] 本地文件：{key}')
 
@@ -132,15 +130,13 @@ def init_bot(conf: dict, proxy_url=''):
 
 def init_rss(conf: dict, update: bool=False, proxy_url=''):
     """初始化订阅源"""
-    temp_list = [{k: v} for k, v in conf.items() if v['enabled']]
     rss_list = []
-    if update:
-        for rss in temp_list:
-            rss = update_rss(rss, proxy_url)
-            if rss:
+    enabled = [{k: v} for k, v in conf.items() if v['enabled']]
+    for rss in enabled:
+        if update:
+            if rss := update_rss(rss, proxy_url):
                 rss_list.append(rss)
-    else:
-        for rss in temp_list:
+        else:
             (key, value), = rss.items()
             rss_list.append({key: root_path.joinpath(f'rss/{value["filename"]}')})
 
@@ -188,8 +184,7 @@ def job(args):
     numb = 0
     tasks = []
     with ThreadPoolExecutor(100) as executor:
-        for url in feeds:
-            tasks.append(executor.submit(parseThread, url, proxy_rss))
+        tasks.extend(executor.submit(parseThread, url, proxy_rss) for url in feeds)
         for task in as_completed(tasks):
             title, result = task.result()            
             if result:

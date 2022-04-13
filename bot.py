@@ -1,10 +1,10 @@
-import os
 import time
 import json
 import yaml
 import telegram
 import requests
 import smtplib
+import subprocess
 from email.header import Header
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -109,9 +109,7 @@ class dingtalkBot:
         text_list = []
         for result in results:
             (feed, value), = result.items()
-            text = ''
-            for title, link in value.items():
-                text += f'- [{title}]({link})\n'
+            text = ''.join(f'- [{title}]({link})\n' for title, link in value.items())
             text_list.append([feed, text.strip()])
         return text_list
 
@@ -188,7 +186,7 @@ class qqBot:
         with open(config_path, 'w+') as f:
             yaml.dump(data, f)
 
-        os.system('cd cqhttp && ./go-cqhttp -d')
+        subprocess.run('cd cqhttp && ./go-cqhttp -d', shell=True)
 
         timeout = time.time() + timeout
         while True:
@@ -206,11 +204,8 @@ class qqBot:
 
     @classmethod
     def kill_server(cls):
-        try:
-            pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
-            os.system(f'cat {pid_path} >/dev/null 2>&1 | xargs kill >/dev/null 2>&1')
-        except Exception as e:
-            pass
+        pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
+        subprocess.run(f'cat {pid_path} | xargs kill', stderr=subprocess.DEVNULL, shell=True)
 
 
 class mailBot:
@@ -219,7 +214,7 @@ class mailBot:
     def __init__(self, sender, passwd, receiver: list, server='') -> None:
         self.sender = sender
         self.receiver = receiver
-        server = server if server else self.get_server(sender)
+        server = server or self.get_server(sender)
 
         self.smtp = smtplib.SMTP_SSL(server)
         self.smtp.login(sender, passwd)
@@ -234,10 +229,7 @@ class mailBot:
             'gmail': 'smtp.gmail.com',
             'outlook': 'smtp.live.com',
         }
-        if key in server:
-            return server[key]
-        else:
-            return f'smtp.{key}.com'
+        return server.get(key, f'smtp.{key}.com')
 
     @staticmethod
     def parse_results(results: list):
@@ -254,14 +246,14 @@ class mailBot:
     def send(self, text: str):
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
-        msg['From'] = f'security-bot <{self.sender}>'    
+        msg['From'] = f'security-bot <{self.sender}>'
         msg['To'] = ','.join(self.receiver)
 
         try:
             self.smtp.sendmail(self.sender, self.receiver, msg.as_string())
-            Color.print_success(f'[+] mailBot 发送成功')
+            Color.print_success('[+] mailBot 发送成功')
         except Exception as e:
-            Color.print_failed(f'[+] mailBot 发送失败')
+            Color.print_failed('[+] mailBot 发送失败')
             print(e)
 
 
