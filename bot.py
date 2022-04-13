@@ -208,7 +208,7 @@ class qqBot:
     def kill_server(cls):
         try:
             pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
-            os.system(f'cat {pid_path} >/dev/null 2>&1 | xargs kill')
+            os.system(f'cat {pid_path} >/dev/null 2>&1 | xargs kill >/dev/null 2>&1')
         except Exception as e:
             pass
 
@@ -248,16 +248,21 @@ class mailBot:
             for title, link in value.items():
                 text += f'<li><a href="{link}">{title}</a></li>'
             text += '</ul>'
-        text += '</body></html>'
+        text += '<br><br><b>如不需要，可直接回复本邮件退订。</b></body></html>'
         return text
 
     def send(self, text: str):
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
-        msg['From'] = f'security-bot <{self.sender}>'
+        msg['From'] = f'security-bot <{self.sender}>'    
         msg['To'] = ','.join(self.receiver)
 
-        self.smtp.sendmail(self.sender, self.receiver, msg.as_string())
+        try:
+            self.smtp.sendmail(self.sender, self.receiver, msg.as_string())
+            Color.print_success(f'[+] mailBot 发送成功')
+        except Exception as e:
+            Color.print_failed(f'[+] mailBot 发送失败')
+            print(e)
 
 
 class telegramBot:
