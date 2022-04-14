@@ -5,7 +5,6 @@
         <title>Chinese-Security-RSS</title>
     </head>
     <body>
-       <outline text="FreeBuf互联网安全新媒体平台" title="FreeBuf互联网安全新媒体平台" type="rss" xmlUrl=" https://www.freebuf.com/feed " htmlUrl=" https://www.freebuf.com "/>
        <outline text="安全客" title="安全客" type="rss" xmlUrl=" https://api.anquanke.com/data/v1/rss " htmlUrl=" https://www.anquanke.com "/>
        <outline text="Seebug Paper" title="Seebug Paper" type="rss" xmlUrl=" https://paper.seebug.org/rss " htmlUrl=" https://paper.seebug.org "/>
        <outline text="绿盟" title="绿盟" type="rss" xmlUrl=" http://blog.nsfocus.net/feed " htmlUrl=" http://blog.nsfocus.net "/>
@@ -32,8 +31,6 @@
        <outline text="阿里云公告" title="阿里云公告" type="rss" xmlUrl=" https://rsshub.app/aliyun/notice/2 " htmlUrl=" https://help.aliyun.com/noticelist/9213612.html "/>
        <outline text="安全脉搏" title="安全脉搏" type="rss" xmlUrl=" https://www.secpulse.com/feed " htmlUrl=" https://www.secpulse.com "/>
        <outline text="Sec-News 安全文摘" title="Sec-News 安全文摘" type="rss" xmlUrl=" https://wiki.ioin.in/atom " htmlUrl=" https://wiki.ioin.in "/>
-       <outline text="跳跳糖 - 安全与分享社区" title="跳跳糖 - 安全与分享社区" type="rss" xmlUrl=" https://tttang.com/rss.xml " htmlUrl=" https://tttang.com "/>
-       <outline text="奇安信A-TEAM技术博客" title="奇安信A-TEAM技术博客" type="rss" xmlUrl=" https://blog.ateam.qianxin.com/atom.xml " htmlUrl=" https://blog.ateam.qianxin.com "/>
        <outline text="清华大学·网络与信息安全实验室 (NISL)" title="清华大学·网络与信息安全实验室 (NISL)" type="rss" xmlUrl=" https://netsec.ccert.edu.cn/feed.xml " htmlUrl=" https://netsec.ccert.edu.cn/chs "/>
        <outline text="chybeta博客" title="chybeta博客" type="rss" xmlUrl=" https://chybeta.github.io/atom.xml " htmlUrl=" https://chybeta.github.io "/>
        <outline text="EVILCOS-余弦博客" title="EVILCOS-余弦博客" type="rss" xmlUrl=" https://evilcos.me/?feed=rss2 " htmlUrl=" https://evilcos.me "/>

@@ -26,13 +26,14 @@ $ cd yarb && ./install.sh
 编辑配置文件 `config.json`，启用所需的订阅源和机器人（key 也可以通过环境变量传入），最好启用代理。
 
 ```sh
-$ ./yarb.py --help
-usage: yarb.py [-h] [--update] [--cron CRON] [--config CONFIG]
+$ ./yarb.py --help                            
+usage: yarb.py [-h] [--update] [--cron CRON] [--config CONFIG] [--test]
 optional arguments:
   -h, --help       show this help message and exit
   --update         Update RSS config file
   --cron CRON      Execute scheduled tasks every day (eg:"11:00")
   --config CONFIG  Use specified config file
+  --test           Test bot
 
 # 单次任务
 $ ./yarb.py
@@ -88,7 +89,7 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 <opml version="2.0">
 <head><title>CustomRSS</title></head>
 <body>
-<outline xmlUrl="https://rsshub.app/hackerone/hacktivity" title="HackerOne Hacker Activity" text="HackerOne Hacker Activity" type="rss" htmlUrl="https://hackerone.com/hacktivity" />
+<outline type="rss" xmlUrl="https://forum.butian.net/Rss" text="奇安信攻防社区" title="奇安信攻防社区" htmlUrl="https://forum.butian.net" />
 </body>
 </opml>
 ```

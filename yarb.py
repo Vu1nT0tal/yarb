@@ -13,7 +13,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from bot import *
-from utils import Color
+from utils import Color, Pattern
 
 import requests
 requests.packages.urllib3.disable_warnings()
@@ -28,14 +28,9 @@ def update_today(data: list=[]):
     today_path = root_path.joinpath('today.md')
     archive_path = root_path.joinpath(f'archive/{today.split("-")[0]}/{today}.md')
 
-    if not data:
-        if data_path.exists():
-            with open(data_path, 'r') as f1:
-                data = json.load(f1)
-            # data_path.unlink(missing_ok=True)
-        else:
-            Color.print_failed(f'[-] 文件不存在 {data_path}')
-            return
+    if not data and data_path.exists():
+        with open(data_path, 'r') as f1:
+            data = json.load(f1)
 
     archive_path.parent.mkdir(parents=True, exist_ok=True)
     with open(today_path, 'w+') as f1, open(archive_path, 'w+') as f2:
@@ -160,6 +155,11 @@ def init_rss(conf: dict, update: bool=False, proxy_url=''):
     return feeds
 
 
+def cleanup():
+    """结束清理"""
+    qqBot.kill_server()
+
+
 def job(args):
     """定时任务"""
     print(f'{pyfiglet.figlet_format("yarb")}\n{today}')
@@ -179,31 +179,36 @@ def job(args):
     proxy_rss = conf['proxy']['url'] if conf['proxy']['rss'] else ''
     feeds = init_rss(conf['rss'], args.update, proxy_rss)
 
-    # 获取文章
     results = []
-    numb = 0
-    tasks = []
-    with ThreadPoolExecutor(100) as executor:
-        tasks.extend(executor.submit(parseThread, url, proxy_rss) for url in feeds)
-        for task in as_completed(tasks):
-            title, result = task.result()            
-            if result:
-                numb += len(result.values())
-                results.append({title: result})
-    Color.print_focus(f'[+] {len(results)} feeds, {numb} articles')
+    if args.test:
+        # 测试数据
+        results.extend({f'test{i}': {Pattern.create(i*500): 'test'}} for i in range(1, 20))
+    else:
+        # 获取文章
+        numb = 0
+        tasks = []
+        with ThreadPoolExecutor(100) as executor:
+            tasks.extend(executor.submit(parseThread, url, proxy_rss) for url in feeds)
+            for task in as_completed(tasks):
+                title, result = task.result()            
+                if result:
+                    numb += len(result.values())
+                    results.append({title: result})
+        Color.print_focus(f'[+] {len(results)} feeds, {numb} articles')
 
-    # temp_path = root_path.joinpath('temp_data.json')
-    # with open(temp_path, 'w+') as f:
-    #     f.write(json.dumps(results, indent=4, ensure_ascii=False))
-    #     Color.print_focus(f'[+] temp data: {temp_path}')
+        # temp_path = root_path.joinpath('temp_data.json')
+        # with open(temp_path, 'w+') as f:
+        #     f.write(json.dumps(results, indent=4, ensure_ascii=False))
+        #     Color.print_focus(f'[+] temp data: {temp_path}')
+
+        # 更新today
+        update_today(results)
 
     # 推送文章
     for bot in bots:
         bot.send(bot.parse_results(results))
-    qqBot.kill_server()   # 关闭cqhttp
 
-    # 更新today
-    update_today(results)
+    cleanup()
 
 
 def argument():
@@ -211,6 +216,7 @@ def argument():
     parser.add_argument('--update', help='Update RSS config file', action='store_true', required=False)
     parser.add_argument('--cron', help='Execute scheduled tasks every day (eg:"11:00")', type=str, required=False)
     parser.add_argument('--config', help='Use specified config file', type=str, required=False)
+    parser.add_argument('--test', help='Test bot', action='store_true', required=False)
     return parser.parse_args()
 
 

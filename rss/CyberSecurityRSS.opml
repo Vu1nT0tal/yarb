@@ -75,7 +75,6 @@
 <outline xmlUrl="https://www.trustwave.com/en-us/rss/trustwave-blog/" title="Trustwave Blog" type="rss" text="Trustwave Blog" htmlUrl="https://www.trustwave.com/en-us/" />
 <outline htmlUrl="https://outflux.net/blog" xmlUrl="http://www.outflux.net/blog/feed/" text="codeblog" title="codeblog" type="rss" />
 <outline type="rss" htmlUrl="https://www.4hou.com" text="嘶吼 RoarTalk – 回归最本质的信息安全,互联网安全新媒体,4hou.com" xmlUrl="https://www.4hou.com/feed" title="嘶吼 RoarTalk – 回归最本质的信息安全,互联网安全新媒体,4hou.com" />
-<outline xmlUrl="https://www.tttang.com/rss.xml" text="跳跳糖 - 安全与分享社区" title="跳跳糖 - 安全与分享社区" htmlUrl="https://tttang.com" type="rss" />
 <outline title="Filippo Valsorda" htmlUrl="https://words.filippo.io/" xmlUrl="https://blog.filippo.io/rss/" text="Filippo Valsorda" type="rss" />
 <outline title="Bugtraq" text="Bugtraq" type="rss" xmlUrl="http://seclists.org/rss/bugtraq.rss" htmlUrl="http://seclists.org/#bugtraq" />
 <outline title="CyberNews" text="CyberNews" htmlUrl="https://cybernews.com" xmlUrl="https://cybernews.com/feed/" type="rss" />
@@ -443,7 +442,6 @@
 <outline text="Red Teaming" title="Red Teaming" type="rss" xmlUrl="https://redteaming.co.uk/feed/" htmlUrl="https://redteaming.co.uk" />
 <outline title="ImNotHere" text="ImNotHere" type="rss" xmlUrl="http://happytree.farbox.com/feed" htmlUrl="http://happytree.farbox.com" />
 <outline type="rss" title="RSS: Programming stuff -" xmlUrl="http://the-interweb.com/serendipity/index.php?/feeds/index.rss2" text="RSS: Programming stuff -" htmlUrl="http://www.the-interweb.com/serendipity/" />
-<outline text="奇安信A-TEAM技术博客" xmlUrl="https://blog.ateam.qianxin.com/atom.xml" htmlUrl="https://blog.ateam.qianxin.com" type="rss" title="奇安信A-TEAM技术博客" />
 <outline type="rss" title="Shell is Only the Beginning" xmlUrl="https://www.darkoperator.com/blog?format=rss" htmlUrl="https://www.darkoperator.com/" text="Shell is Only the Beginning" />
 <outline text="IMQ Minded Security Blog" title="IMQ Minded Security Blog" type="rss" htmlUrl="https://blog.mindedsecurity.com/" xmlUrl="http://blog.mindedsecurity.com/feeds/posts/default" />
 <outline htmlUrl="/atom.xml" type="rss" text="RcoIl的窝" xmlUrl="http://rcoil.me/atom.xml" title="RcoIl的窝" />

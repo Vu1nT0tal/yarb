@@ -115,7 +115,6 @@
 <outline type="rss" title="Unauthorized Access Blog" text="Unauthorized Access Blog" xmlUrl="https://blog.unauthorizedaccess.nl/feed.xml" htmlUrl="https://blog.unauthorizedaccess.nl/" />
 <outline text="loecho@垃圾桶" htmlUrl="https://1oecho.github.io" xmlUrl="https://1oecho.github.io/atom.xml" type="rss" title="loecho@垃圾桶" />
 <outline type="rss" htmlUrl="https://byt3bl33d3r.github.io/" title="byt3bl33d3r" xmlUrl="https://byt3bl33d3r.github.io/feeds/all.rss.xml" text="byt3bl33d3r" />
-<outline text="奇安信A-TEAM技术博客" title="奇安信A-TEAM技术博客" type="rss" xmlUrl="https://blog.ateam.qianxin.com/atom.xml" htmlUrl="https://blog.ateam.qianxin.com" />
 <outline xmlUrl="http://happytree.farbox.com/feed" title="ImNotHere" htmlUrl="http://happytree.farbox.com/" text="ImNotHere" type="rss" />
 <outline htmlUrl="https://pentestlab.blog" type="rss" text="Penetration Testing Lab" xmlUrl="https://pentestlab.blog/feed/" title="Penetration Testing Lab" />
 <outline htmlUrl="https://www.hackingdream.net/" text="Hacking Dream" type="rss" title="Hacking Dream" xmlUrl="https://www.hackingdream.net/feeds/posts/default?alt=rss" />

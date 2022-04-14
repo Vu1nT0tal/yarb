@@ -38,7 +38,8 @@ class feishuBot:
 
     def send(self, text_list: list):
         for text in text_list:
-            print(text)
+            print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
             data = {"msg_type": "text", "content": {"text": text}}
             headers = {'Content-Type': 'application/json'}
             url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
@@ -79,7 +80,8 @@ class wecomBot:
         limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
         for text in text_list:
             with limiter.ratelimit('identity', delay=True):
-                print(text)
+                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
                 data = {"msgtype": "markdown", "markdown": {"content": text}}
                 headers = {'Content-Type': 'application/json'}
                 url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
@@ -113,7 +115,8 @@ class dingtalkBot:
         limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
         for (feed, text) in text_list:
             with limiter.ratelimit('identity', delay=True):
-                print(text)
+                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
                 data = {"msgtype": "markdown", "markdown": {"title": feed, "text": text}}
                 headers = {'Content-Type': 'application/json'}
                 url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
@@ -151,7 +154,8 @@ class qqBot:
         limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
         for text in text_list:
             with limiter.ratelimit('identity', delay=True):
-                print(text)
+                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
                 for id in self.group_id:
                     try:
                         r = requests.post(f'{self.server}/send_group_msg?group_id={id}&&message={text}')
@@ -230,6 +234,8 @@ class mailBot:
         return text
 
     def send(self, text: str):
+        print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
         msg['From'] = f'security-bot <{self.sender}>'
@@ -275,7 +281,8 @@ class telegramBot:
         limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
         for text in text_list:
             with limiter.ratelimit('identity', delay=True):
-                print(text)
+                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
                 for id in self.chat_id:
                     try:
                         self.bot.send_message(chat_id=id, text=text, parse_mode='HTML')
