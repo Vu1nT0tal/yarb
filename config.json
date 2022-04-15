@@ -29,6 +29,11 @@
             "url": "https://raw.githubusercontent.com/mrtouch93/awesome-security-feed/main/security_feeds.opml",
             "filename": "awesome-security-feed.opml"
         },
+        "SecurityRSS": {
+            "enabled": true,
+            "url": "https://github.com/Han0nly/SecurityRSS/blob/master/SecureRss.opml",
+            "filename": "SecurityRSS.opml"
+        },
         "chinese-independent-blogs": {
             "enabled": false,
             "url": "https://raw.githubusercontent.com/timqian/chinese-independent-blogs/master/feed.opml",

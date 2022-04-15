@@ -73,11 +73,16 @@ def update_rss(rss: dict, proxy_url=''):
 def parseThread(url: str, proxy_url=''):
     """获取文章线程"""
     proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+    }
 
     title = ''
     result = {}
     try:
-        r = requests.get(url, timeout=10, verify=False, proxies=proxy)
+        r = requests.get(url, timeout=10, headers=headers, verify=False, proxies=proxy)
         r = feedparser.parse(r.content)
         title = r.feed.title
         for entry in r.entries:
@@ -142,7 +147,7 @@ def init_rss(conf: dict, update: bool=False, proxy_url=''):
         try:
             rss = listparser.parse(open(value).read())
             for feed in rss.feeds:
-                url = feed.url.rstrip('/')
+                url = feed.url.strip().rstrip('/')
                 short_url = url.split('://')[-1].split('www.')[-1]
                 check = [feed for feed in feeds if short_url in feed]
                 if not check:

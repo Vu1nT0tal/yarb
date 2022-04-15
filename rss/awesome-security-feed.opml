@@ -64,7 +64,6 @@
       <outline type="rss" text="BackBox Linux blogs" xmlUrl="http://www.backbox.org/blog/feed" htmlUrl="https://blog.backbox.org"/>
       <outline type="rss" text="Kali Linux" xmlUrl="https://www.kali.org/feed/" htmlUrl="https://www.kali.org"/>
       <outline type="rss" text="Tails - News" xmlUrl="https://tails.boum.org/news/index.en.rss" htmlUrl="https://tails.boum.org/news/index.en.html"/>
-      <outline type="rss" text="WeakNet Labs" xmlUrl="https://www.weaknetlabs.com/feed/" htmlUrl="http://www.weaknetlabs.com/"/>
     </outline>
     <outline text="Italiano">
       <outline type="rss" text="Andrea Draghetti" xmlUrl="http://feeds.feedburner.com/OverSecurity" htmlUrl="https://www.andreadraghetti.it"/>
@@ -319,7 +318,6 @@
       <outline type="rss" text="Krebs on Security" xmlUrl="http://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com"/>
       <outline type="rss" text="Palo Alto Networks Blog" xmlUrl="https://feeds.feedburner.com/PaloAltoNetworks" htmlUrl="https://blog.paloaltonetworks.com"/>
       <outline type="rss" text="Security Affairs" xmlUrl="http://securityaffairs.co/wordpress/feed" htmlUrl="https://securityaffairs.co/wordpress"/>
-      <outline type="rss" text="The Hacker News" xmlUrl="http://feeds.feedburner.com/TheHackersNews" htmlUrl="https://thehackernews.com/"/>
       <outline type="rss" text="The Register - Security" xmlUrl="http://www.theregister.co.uk/security/headlines.atom" htmlUrl="https://www.theregister.com/security/"/>
       <outline type="rss" text="ThreatPost" xmlUrl="https://threatpost.com/feed/" htmlUrl="https://threatpost.com"/>
       <outline type="rss" text="TorrentFreak" xmlUrl="http://feeds.feedburner.com/Torrentfreak" htmlUrl="https://torrentfreak.com"/>

@@ -1,5 +1,4 @@
 import pprint
-import struct
 from colorama import Fore
 
 

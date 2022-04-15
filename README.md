@@ -57,12 +57,22 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 
 ## 订阅源
 
-订阅源默认来自以下仓库，自动去重。
+推荐订阅源：
+
+- [CustomRSS](rss/CustomRSS.opml)
+
+其他订阅源：
 
 - [CyberSecurityRSS](https://github.com/zer0yu/CyberSecurityRSS)
 - [Chinese-Security-RSS](https://github.com/zhengjim/Chinese-Security-RSS)
 - [awesome-security-feed](https://github.com/mrtouch93/awesome-security-feed)
-- [chinese-independent-blogs](https://github.com/timqian/chinese-independent-blogs)
+- [SecurityRSS](https://github.com/Han0nly/SecurityRSS)
+- [SecWiki 安全聚合](https://www.sec-wiki.com/opml/index)
+- [Hacking8 安全信息流](https://i.hacking8.com/)
+
+非安全订阅源：
+
+- [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)
 
 添加自定义订阅有两种方法：
 
