@@ -1,0 +1,223 @@
+# 每日安全资讯（2022-04-16）
+
+- Files ≈ Packet Storm
+  - [Asterisk Project Security Advisory - AST-2022-003](https://packetstormsecurity.com/files/166746/AST-2022-003.txt)
+  - [Asterisk Project Security Advisory - AST-2022-002](https://packetstormsecurity.com/files/166745/AST-2022-002.txt)
+  - [Asterisk Project Security Advisory - AST-2022-001](https://packetstormsecurity.com/files/166744/AST-2022-001.txt)
+  - [Siemens A8000 CP-8050/CP-8031 SICAM WEB Missing File Download / Missing Authentication](https://packetstormsecurity.com/files/166743/SA-20220413.txt)
+  - [Are You Really Muted? A Privacy Analysis Of Mute Buttons In Video Conferencing Apps](https://packetstormsecurity.com/files/166742/vca_mute.pdf)
+  - [Backdoor.Win32.NetSpy.10 Remote Command Execution](https://packetstormsecurity.com/files/166741/MVID-2022-0551.txt)
+  - [Backdoor.Win32.NetCat32.10 Remote Command Execution](https://packetstormsecurity.com/files/166740/MVID-2022-0550.txt)
+  - [Backdoor.Win32.NinjaSpy.c Authentication Bypass](https://packetstormsecurity.com/files/166739/MVID-2022-0552.txt)
+  - [Email-Worm.Win32.Pluto.b Insecure Permissions](https://packetstormsecurity.com/files/166738/MVID-2022-0547.txt)
+  - [Backdoor.Win32.Kilo.016 Denial Of Service](https://packetstormsecurity.com/files/166737/MVID-2022-0546.txt)
+  - [HackTool.Win32.IpcScan.c Buffer Overflow](https://packetstormsecurity.com/files/166736/MVID-2022-0549.txt)
+  - [Backdoor.Win32.Psychward.03.a Weak Hardcoded Password](https://packetstormsecurity.com/files/166735/MVID-2022-0548.txt)
+  - [Backdoor.Win32.Prorat.cwx Insecure Permissions](https://packetstormsecurity.com/files/166734/MVID-2022-0545.txt)
+  - [Backdoor.Win32.MotivFTP.12 Authentication Bypass](https://packetstormsecurity.com/files/166733/MVID-2022-0544.txt)
+  - [Red Hat Security Advisory 2022-1379-01](https://packetstormsecurity.com/files/166732/RHSA-2022-1379-01.txt)
+  - [Red Hat Security Advisory 2022-1378-01](https://packetstormsecurity.com/files/166731/RHSA-2022-1378-01.txt)
+  - [Microsoft HTTP Protocol Stack Denial Of Service](https://packetstormsecurity.com/files/166730/CVE-2022-21907.py.txt)
+- Sec-News 安全文摘
+  - [SCA的困境和出路](https://wiki.ioin.in/url/9Nnk)
+- CXSECURITY Database RSS Feed - CXSecurity.com
+  - [Easy!Appointments Information Disclosure](https://cxsecurity.com/issue/WLB-2022040061)
+  - [Backdoor.Win32.NinjaSpy.c / Authentication Bypass](https://cxsecurity.com/issue/WLB-2022040060)
+  - [jsharp Technology - Sql Injection Vulnerability](https://cxsecurity.com/issue/WLB-2022040059)
+  - [Signature Software - Sql Injection Vulnerability](https://cxsecurity.com/issue/WLB-2022040058)
+  - [Miracle Hunt Services - Sql Injection Vulnerability](https://cxsecurity.com/issue/WLB-2022040057)
+  - [HackTool.Win32.IpcScan.c / Local Stack Buffer Overflow](https://cxsecurity.com/issue/WLB-2022040056)
+  - [Email-Worm.Win32.Pluto.b / Insecure Permissions](https://cxsecurity.com/issue/WLB-2022040055)
+  - [Backdoor.Win32.Prorat.cwx / Insecure Permissions](https://cxsecurity.com/issue/WLB-2022040054)
+  - [Backdoor.Win32.NetSpy.10 / Unauthenticated Remote Command Execution](https://cxsecurity.com/issue/WLB-2022040053)
+  - [Backdoor.Win32.Psychward.03.a / Weak Hardcoded Password](https://cxsecurity.com/issue/WLB-2022040052)
+  - [Backdoor.Win32.Kilo.016 / Denial of Service (UDP Datagram)](https://cxsecurity.com/issue/WLB-2022040051)
+  - [Backdoor.Win32.NetCat32.10  / Unauthenticated Remote Command Execution](https://cxsecurity.com/issue/WLB-2022040050)
+- Sploitus.com Exploits RSS Feed
+  - [Backdoor.Win32.Kilo.016 Denial Of Service exploit](https://sploitus.com/exploit?id=PACKETSTORM:166737&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.NetCat32.10 Remote Command Execution exploit](https://sploitus.com/exploit?id=PACKETSTORM:166740&utm_source=rss&utm_medium=rss)
+  - [Siemens A8000 CP-8050/CP-8031 SICAM WEB Missing File Download / Missing Authentication exploit](https://sploitus.com/exploit?id=PACKETSTORM:166743&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.NetSpy.10 Remote Command Execution exploit](https://sploitus.com/exploit?id=PACKETSTORM:166741&utm_source=rss&utm_medium=rss)
+  - [Microsoft HTTP Protocol Stack Denial Of Service exploit](https://sploitus.com/exploit?id=PACKETSTORM:166730&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.MotivFTP.12 Authentication Bypass exploit](https://sploitus.com/exploit?id=PACKETSTORM:166733&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.Psychward.03.a Weak Hardcoded Password exploit](https://sploitus.com/exploit?id=PACKETSTORM:166735&utm_source=rss&utm_medium=rss)
+  - [Email-Worm.Win32.Pluto.b Insecure Permissions exploit](https://sploitus.com/exploit?id=PACKETSTORM:166738&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.Prorat.cwx Insecure Permissions exploit](https://sploitus.com/exploit?id=PACKETSTORM:166734&utm_source=rss&utm_medium=rss)
+  - [HackTool.Win32.IpcScan.c Buffer Overflow exploit](https://sploitus.com/exploit?id=PACKETSTORM:166736&utm_source=rss&utm_medium=rss)
+  - [Backdoor.Win32.NinjaSpy.c Authentication Bypass exploit](https://sploitus.com/exploit?id=PACKETSTORM:166739&utm_source=rss&utm_medium=rss)
+  - [Exploit for CVE-2021-31805 exploit](https://sploitus.com/exploit?id=F30ACAD3-0FC4-58C8-84CF-A8FFF2BE55B4&utm_source=rss&utm_medium=rss)
+  - [Exploit for CVE-2022-22954 exploit](https://sploitus.com/exploit?id=479D22AB-BE97-51BA-82CC-F8945ED02516&utm_source=rss&utm_medium=rss)
+  - [Exploit for CVE-2022-26809 exploit](https://sploitus.com/exploit?id=706A6EEB-1D07-53EB-8455-F7809863DADC&utm_source=rss&utm_medium=rss)
+  - [Exploit for Vulnerability in Wps Wps Office exploit](https://sploitus.com/exploit?id=65F6FBF4-8932-5F52-8F69-DC63D6E7469B&utm_source=rss&utm_medium=rss)
+  - [Exploit for Vulnerability in Microsoft exploit](https://sploitus.com/exploit?id=7471B2E5-0795-58A2-B004-880BFD75BC0A&utm_source=rss&utm_medium=rss)
+  - [Exploit for Code Injection in Vmware Spring Cloud Gateway exploit](https://sploitus.com/exploit?id=159F2FD0-B230-5CB7-B1E6-E7A0ABD62FDE&utm_source=rss&utm_medium=rss)
+  - [Exploit for CVE-2022-29072 exploit](https://sploitus.com/exploit?id=44D0AF62-511E-5D2A-A63E-4536C317DB6C&utm_source=rss&utm_medium=rss)
+- 跳跳糖 - 安全与分享社区
+  - [内网渗透--NTLM中继与反射浅析](https://tttang.com/archive/1548/)
+- Security Boulevard
+  - [PHP Web Application Security – How to protect your WordPress website](https://securityboulevard.com/2022/04/php-web-application-security-how-to-protect-your-wordpress-website/)
+  - [What’s the Best Movie About Hackers? (Book Review)](https://securityboulevard.com/2022/04/whats-the-best-movie-about-hackers-book-review/)
+  - [INCONTROLLER: Acting to Protect Customers from Unknown Threats](https://securityboulevard.com/2022/04/incontroller-acting-to-protect-customers-from-unknown-threats/)
+  - [BSides Budapest 2021: Vivek Malik’s & Kumar Vikramjeet’s ‘One Stop Anomaly Shop’](https://securityboulevard.com/2022/04/bsides-budapest-2021-vivek-maliks-kumar-vikramjeets-one-stop-anomaly-shop/)
+  - [Russia Losing War Because Unable to “Build Airplane in Flight”](https://securityboulevard.com/2022/04/russia-losing-war-because-unable-to-build-airplane-in-flight/)
+  - [CISO Thoughts with David Lindner – April 15](https://securityboulevard.com/2022/04/ciso-thoughts-with-david-lindner-april-15/)
+  - [Online Document Verification: How Does It Work?](https://securityboulevard.com/2022/04/online-document-verification-how-does-it-work/)
+  - [Joy Of Tech® ‘AI Mood Detector’](https://securityboulevard.com/2022/04/joy-of-tech-ai-mood-detector/)
+- obaby@mars
+  - [Win10修改已连接网络的名称](http://h4ck.org.cn/2022/04/win10%e4%bf%ae%e6%94%b9%e5%b7%b2%e8%bf%9e%e6%8e%a5%e7%bd%91%e7%bb%9c%e7%9a%84%e5%90%8d%e7%a7%b0/)
+- 安全客-有思想的安全新媒体
+  - [CVE-2021-22205 GITLAB 未授权 RCE 漏洞](https://www.anquanke.com/post/id/272061)
+  - [专题·网安意识 | 美国网络安全意识教育举措概述](https://www.anquanke.com/post/id/272068)
+  - [360核心安全大脑，将17年积累的安全能力直达用户](https://www.anquanke.com/post/id/272040)
+  - [2022安全客优质分享计划第一期 | V8 Inline Cache源码分析](https://www.anquanke.com/post/id/272093)
+  - [ERC721R 风险分析](https://www.anquanke.com/post/id/272039)
+  - [数字安全观察-每周简报 （2022.03.26 -2022.04.08）](https://www.anquanke.com/post/id/272084)
+  - [数据安全事件应急及溯源分析实践案例](https://www.anquanke.com/post/id/272008)
+  - [新的Fodcha DDoS僵尸网络每天针对100多名受害者](https://www.anquanke.com/post/id/272059)
+- FreeBuf网络安全行业门户
+  - [思科修复高危身份验证绕过漏洞](https://www.freebuf.com/news/329230.html)
+  - [新型Enemybot DDoS僵尸网络借用Mirai和Gafgyt攻击代码](https://www.freebuf.com/news/329177.html)
+  - [CISA警告机构修补积极利用的Windows LPE错误](https://www.freebuf.com/articles/329172.html)
+  - [FreeBuf甲方群话题讨论 | 聊聊企业资产安全管理](https://www.freebuf.com/articles/neopoints/329171.html)
+  - [谷歌浏览器紧急更新，又修复一零日漏洞](https://www.freebuf.com/news/329068.html)
+  - [想不到，美国核设施太老竟成保命关键？](https://www.freebuf.com/news/329061.html)
+  - [2022年第一季度美国数据泄露持续上升，“未知”成最大攻击媒介](https://www.freebuf.com/news/329060.html)
+  - [常见框架漏洞复现—Apache Struts2](https://www.freebuf.com/vuls/325493.html)
+  - [Spring Cloud Gateway 远程代码执行漏洞分析（CVE-2022-22947）](https://www.freebuf.com/articles/web/328282.html)
+- 绿盟科技技术博客
+  - [俄乌信息技术供应链制裁中的认知“谜团”观察](http://blog.nsfocus.net/way-exp/)
+- Trail of Bits Blog
+  - [The Frozen Heart vulnerability in Bulletproofs](https://blog.trailofbits.com/2022/04/15/the-frozen-heart-vulnerability-in-bulletproofs/)
+- SpiderLabs Blog from Trustwave
+  - [Tough Times for Ukrainian Honeypot?](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/tough-times-for-ukrainian-honeypot/)
+- Hex Rays
+  - [Igor’s tip of the week #85: Source-level debugging](https://hex-rays.com/blog/igors-tip-of-the-week-85-source-level-debugging/)
+- Reverse Engineering
+  - [How to Troubleshoot Arcade Boards! Reverse engineering Konami security keys and chips](https://www.reddit.com/r/ReverseEngineering/comments/u477es/how_to_troubleshoot_arcade_boards_reverse/)
+  - [I failed... but tomorrow is another day](https://www.reddit.com/r/ReverseEngineering/comments/u4k3u8/i_failed_but_tomorrow_is_another_day/)
+- The Daily Swig | Cybersecurity news and views
+  - [Tearing down red flags: Women in CyberSecurity’s Lynn Dohm on tackling the high exit rate of female infosec pros](https://portswigger.net/daily-swig/tearing-down-red-flags-women-in-cybersecuritys-lynn-dohm-on-tackling-the-high-exit-rate-of-female-infosec-pros)
+- Hacking Articles
+  - [A Detailed Guide on Medusa](https://www.hackingarticles.in/a-detailed-guide-on-medusa/)
+- SentinelOne
+  - [The Good, the Bad and the  Ugly in Cybersecurity – Week 16](https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-16-3/)
+- HAHWUL
+  - [SSE(Server Sent Event)](https://www.hahwul.com/cullinan/sse/)
+- Ghostlulz Hacks
+  - [Cypher Injection (Neo4j) Graph Databases](http://ghostlulz.com/cypher-injection-neo4j-graph-databases/?utm_source=rss&utm_medium=rss&utm_campaign=cypher-injection-neo4j-graph-databases)
+- 奇客Solidot–传递最新科技情报
+  - [主要平台宣布将展示帐号 IP 属地](https://www.solidot.org/story?sid=71262)
+  - [Google 释出紧急更新修复正被利用的 Chrome 0day 漏洞](https://www.solidot.org/story?sid=71261)
+  - [密码检查算法高危漏洞允许任何人登陆思科的 Wi-Fi 管理软件](https://www.solidot.org/story?sid=71260)
+  - [从简单 AI 获得新理解](https://www.solidot.org/story?sid=71258)
+  - [儿童严重肝病病例引发国际调查](https://www.solidot.org/story?sid=71257)
+  - [融化的冰盖可能不会阻挡洋流](https://www.solidot.org/story?sid=71256)
+  - [热电池可有效将风能太阳能存储在可再生电网中](https://www.solidot.org/story?sid=71255)
+  - [玩家普及 Windows 11 的速度远逊于 Windows 10](https://www.solidot.org/story?sid=71254)
+  - [视频网站禁止直播未经批准的网游](https://www.solidot.org/story?sid=71253)
+  - [俄罗斯干扰乌克兰地区的 GPS 信号](https://www.solidot.org/story?sid=71252)
+  - [Twitter 董事会准备反击 Elon Musk 的收购提议](https://www.solidot.org/story?sid=71251)
+- KitPloit - PenTest & Hacking Tools
+  - [Shhhloader - SysWhispers Shellcode Loader](http://www.kitploit.com/2022/04/shhhloader-syswhispers-shellcode-loader.html)
+  - [modifyCertTemplate - ADCS Cert Template Modification And ACL Enumeration](http://www.kitploit.com/2022/04/modifycerttemplate-adcs-cert-template.html)
+- Blog – NTT Application Security
+  - [4 Cybersecurity Tax Tips for Last-Minute Filers](https://www.whitehatsec.com/blog/4-cybersecurity-tax-tips-for-last-minute-filers/)
+- Forensic Focus
+  - [Magnet Forensics Previews New and Upcoming Product Updates to Magnet Digital Investigation Suite](https://www.forensicfocus.com/news/magnet-forensics-previews-new-and-upcoming-product-updates-to-magnet-digital-investigation-suite/)
+  - [Oxygen Forensics presents major enhancements to computer artifact support](https://www.forensicfocus.com/news/oxygen-forensics-presents-major-enhancements-to-computer-artifact-support/)
+- Have I Been Pwned latest breaches
+  - [Avvo - 4,101,101 breached accounts](https://haveibeenpwned.com/PwnedWebsites#Avvo)
+- IT Service Management News
+  - [Stato degli standard ISO/IEC 270xx](http://blog.cesaregallotti.it/2022/04/stato-degli-standard-isoiec-270xx.html)
+- Troy Hunt's Blog
+  - [Breach Disclosure Blow-by-Blow: Here's Why It's so Hard](https://www.troyhunt.com/breach-disclosure-blow-by-blow-heres-why-its-so-hard/)
+  - [Weekly Update 291](https://www.troyhunt.com/weekly-update-291/)
+- Il Disinformatico
+  - [Podcast RSI - Il primo video virale di Internet: Star Wars Kid](http://attivissimo.blogspot.com/2022/04/podcast-rsi-il-primo-video-virale-di.html)
+- Daniel Miessler
+  - [A Quick Thought on Musk Buying Twitter](https://danielmiessler.com/blog/a-quick-thought-on-musk-buying-twitter/)
+- 0x00sec - The Home of the Hacker - Top topics
+  - [Awesome malware development resources](https://0x00sec.org/t/awesome-malware-development-resources/29020)
+- SANS Internet Storm Center, InfoCON: green
+  - [ISC Stormcast For Friday, April 15th, 2022 https://isc.sans.edu/podcastdetail.html&#x3f;id=7966, (Fri, Apr 15th)](https://isc.sans.edu/diary/rss/28552)
+- Schneier on Security
+  - [Friday Squid Blogging: Strawberry Squid Video](https://www.schneier.com/blog/archives/2022/04/friday-squid-blogging-strawberry-squid-video.html)
+- bellingcat
+  - [Russia’s QAnon Followers Can’t Make Up Their Minds About Ukraine](https://www.bellingcat.com/news/2022/04/15/russias-qanon-followers-cant-make-up-their-minds-about-ukraine/)
+- TG Soft Software House - News
+  - [Auguri di <strong>Buona Pasqua</strong> dallo staff di <strong>TG Soft</strong> Cyber Security Specialist](http://www.tgsoft.it/italy/news_archivio.asp?id=1299)
+- IntelTechniques Blog
+  - [The Privacy, Security, & OSINT Show – Episode 257](https://inteltechniques.com/blog/2022/04/15/the-privacy-security-osint-show-episode-257/)
+- Security Affairs
+  - [Threat actors use Zimbra exploits to target organizations in Ukraine](https://securityaffairs.co/wordpress/130244/cyber-warfare-2/attacks-ukraine-govt-zimbra-exploits.html)
+  - [Conti Ransomware Gang claims responsibility for the Nordex hack](https://securityaffairs.co/wordpress/130238/cyber-crime/conti-ransomware-claims-nordex-attack.html)
+  - [ZingoStealer crimeware released for free in the cybercrime ecosystem](https://securityaffairs.co/wordpress/130229/breaking-news/zingostealer-crimeware.html)
+  - [Auth bypass flaw in Cisco Wireless LAN Controller Software allows device takeover](https://securityaffairs.co/wordpress/130217/security/auth-bypass-cisco-wireless-lan-controller.html)
+  - [Google fixed third zero-day in Chrome since the start of 2022](https://securityaffairs.co/wordpress/130213/security/google-chrome-zeroday-cve-2022-1364.html)
+  - [Ways to Develop a Cybersecurity Training Program for Employees](https://securityaffairs.co/wordpress/130211/security/cybersecurity-training-program.html)
+  - [Analysis of the SunnyDay ransomware](https://securityaffairs.co/wordpress/130204/malware/analysis-sunnyday-ransomware.html)
+- The Register - Security
+  - [Feds offer $5m reward for info on North Korean cyber crooks](https://go.theregister.com/feed/www.theregister.com/2022/04/15/feds_north_korea_bounty/)
+  - [Star loses $500,000 NFT after crooks exploit Rarible market](https://go.theregister.com/feed/www.theregister.com/2022/04/15/rarible-flaw-nft/)
+  - [Cybercriminals do their homework for latest banking scam](https://go.theregister.com/feed/www.theregister.com/2022/04/15/the_latest_scam_pay_yourself/)
+  - [Google issues third emergency fix for Chrome this year](https://go.theregister.com/feed/www.theregister.com/2022/04/15/google-third-fix-chrome-vulnerability/)
+  - [North Korea's Lazarus cyber-gang caught 'spying' on chemical sector companies](https://go.theregister.com/feed/www.theregister.com/2022/04/15/lazarus_chemical_korea/)
+- Dark Reading
+  - [Google Emergency Update Fixes Chrome Zero-Day](https://www.darkreading.com/attacks-breaches/google-emergency-update-fixes-chrome-zero-day)
+  - [Cloud Cost, Reliability Raise IT Concerns](https://www.darkreading.com/tech-trends/cloud-cost-reliability-raise-it-concerns)
+  - [Lazarus Targets Chemical Sector With 'Dream Jobs,' Then Trojans](https://www.darkreading.com/attacks-breaches/lazarus-targets-chemical-sector-with-dream-jobs-then-trojans)
+  - [CISA Alert on ICS, SCADA Devices Highlights Growing Enterprise IoT Security Risks](https://www.darkreading.com/omdia/cisa-alert-on-ics-scada-devices-highlights-growing-enterprise-iot-security-risks)
+  - [Cybersecurity Act of 2022: A Step in the Right Direction With a Significant Loophole](https://www.darkreading.com/vulnerabilities-threats/cybersecurity-act-of-2022-a-step-in-the-right-direction-with-a-significant-loophole)
+- Securityinfo.it
+  - [Nuovo malware cinese per Windows](https://www.securityinfo.it/2022/04/15/nuovo-malware-cinese-per-windows/?utm_source=rss&utm_medium=rss&utm_campaign=nuovo-malware-cinese-per-windows)
+  - [Gli APT minacciano le infrastrutture critiche](https://www.securityinfo.it/2022/04/15/gli-apt-minacciano-le-infrastrutture-critiche/?utm_source=rss&utm_medium=rss&utm_campaign=gli-apt-minacciano-le-infrastrutture-critiche)
+- TS-WAY
+  - [Weekly Threats N. 15 2022](https://www.ts-way.com/it/weekly-threats/2022/04/15/weekly-threats-n-15-2022/)
+- KitPloit - PenTest Tools!
+  - [Shhhloader - SysWhispers Shellcode Loader](http://www.kitploit.com/2022/04/shhhloader-syswhispers-shellcode-loader.html)
+  - [modifyCertTemplate - ADCS Cert Template Modification And ACL Enumeration](http://www.kitploit.com/2022/04/modifycerttemplate-adcs-cert-template.html)
+- Threatpost
+  - [Karakurt Ensnares Conti, Diavol Ransomware Groups in Its Web](https://threatpost.com/karakurt-conti-diavol-ransomware/179317/)
+- TorrentFreak
+  - [DuckDuckGo Removes Pirate Sites and YouTube-DL from Its Search Results](https://torrentfreak.com/duckduckgo-removes-pirate-sites-and-youtube-dl-from-its-search-results-220415/)
+  - [YouTube Rejects Movie Piracy Claims and Content ID Critique](https://torrentfreak.com/youtube-rejects-movie-piracy-claims-and-content-id-critique-220415/)
+- Computer Forensics
+  - [Autopsy web cache understanding](https://www.reddit.com/r/computerforensics/comments/u4dmfy/autopsy_web_cache_understanding/)
+  - [How Mobile Forensic tools work ??](https://www.reddit.com/r/computerforensics/comments/u40xnc/how_mobile_forensic_tools_work/)
+- Full Disclosure
+  - [Adversary3 v1.0 / Malware vulnerability intel tool for third-party attackers / updated](https://seclists.org/fulldisclosure/2022/Apr/30)
+  - [Email-Worm.Win32.Pluto.b / Insecure Permissions](https://seclists.org/fulldisclosure/2022/Apr/29)
+  - [Backdoor.Win32.Kilo.016 / Denial of Service (UDP Datagram)](https://seclists.org/fulldisclosure/2022/Apr/28)
+  - [Backdoor.Win32.NinjaSpy.c / Authentication Bypass](https://seclists.org/fulldisclosure/2022/Apr/27)
+  - [Backdoor.Win32.NetSpy.10 / Unauthenticated Remote Command	Execution](https://seclists.org/fulldisclosure/2022/Apr/26)
+  - [Backdoor.Win32.NetCat32.10 / Unauthenticated Remote Command	Execution](https://seclists.org/fulldisclosure/2022/Apr/25)
+  - [HackTool.Win32.IpcScan.c / Local Stack Buffer Overflow](https://seclists.org/fulldisclosure/2022/Apr/24)
+  - [Backdoor.Win32.Psychward.03.a / Weak Hardcoded Password](https://seclists.org/fulldisclosure/2022/Apr/23)
+  - [Backdoor.Win32.Prorat.cwx / Insecure Permissions](https://seclists.org/fulldisclosure/2022/Apr/22)
+  - [Backdoor.Win32.MotivFTP.12 / Authentication Bypass](https://seclists.org/fulldisclosure/2022/Apr/21)
+  - [SEC Consult SA-20220413 :: Missing Authentication at File Download & Denial of Service in Siemens A8000 PLC](https://seclists.org/fulldisclosure/2022/Apr/20)
+- Your Hacking Tutorial by Zempirians
+  - [How to identify zero-day phishing URL](https://www.reddit.com/r/HowToHack/comments/u47e5a/how_to_identify_zeroday_phishing_url/)
+  - [Windows Reverse Shell - Ethical Hacking](https://www.reddit.com/r/HowToHack/comments/u480v3/windows_reverse_shell_ethical_hacking/)
+  - [Evil-WinRM broken](https://www.reddit.com/r/HowToHack/comments/u432gn/evilwinrm_broken/)
+  - [Any RAT's working in 2022?](https://www.reddit.com/r/HowToHack/comments/u4h352/any_rats_working_in_2022/)
+  - [How does Nmap and Directory Traversal on a low level?](https://www.reddit.com/r/HowToHack/comments/u4f94f/how_does_nmap_and_directory_traversal_on_a_low/)
+  - [How to download firmware for security cameras](https://www.reddit.com/r/HowToHack/comments/u43poy/how_to_download_firmware_for_security_cameras/)
+- /r/netsec - Information Security News & Discussion
+  - [[Techmonitor.ai] Failed cyberattack on Ukraine's electricity grid could indicate Russia's growing willingness to attack critical infrastructure](https://www.reddit.com/r/netsec/comments/u4hl7x/techmonitorai_failed_cyberattack_on_ukraines/)
+  - [iViewed your API keys](https://www.reddit.com/r/netsec/comments/u47hj7/iviewed_your_api_keys/)
+  - [New tool to exploit TURN servers - create a socks proxy into the internal network](https://www.reddit.com/r/netsec/comments/u4daum/new_tool_to_exploit_turn_servers_create_a_socks/)
+  - [Multiple Vulnerabilities in Cisco Expressway](https://www.reddit.com/r/netsec/comments/u4d8mr/multiple_vulnerabilities_in_cisco_expressway/)
+  - [Turncoat - Extract private messages from malware/phishing Telegram Bots](https://www.reddit.com/r/netsec/comments/u49kwt/turncoat_extract_private_messages_from/)
+  - [PYSA Ransomware Group Technical Analysis](https://www.reddit.com/r/netsec/comments/u4hrd5/pysa_ransomware_group_technical_analysis/)
+- Blackhat Library: Hacking techniques and research
+  - [Delta Controls enteliTOUCH 3.40.3935 Cross Site Scripting ≈ Packet Storm](https://www.reddit.com/r/blackhat/comments/u40j2j/delta_controls_entelitouch_3403935_cross_site/)
+  - [Open source software fuzzing with AFL](https://www.reddit.com/r/blackhat/comments/u49w7u/open_source_software_fuzzing_with_afl/)
+- Hakin9 –  IT Security Magazine
+  - [365Inspect - a PowerShell script that automates the security assessment of Microsoft Office 365 environments](https://hakin9.org/365inspect-a-powershell-script-that-automates-the-security-assessment-of-microsoft-office-365-environments/)
+- Deeplinks
+  - [Let's Encrypt Wins Levchin Prize For Work On Internet Security](https://www.eff.org/press/releases/lets-encrypt-wins-levchin-prize-work-internet-security)
+- Paul's Security Weekly
+  - [ESW #269 - Bob Erdman & Justin Tolman](http://podcast.securityweekly.com/esw-269-bob-erdman-justin-tolman)
+  - [SWN #204 - Struts, Management Networks, Elon Spits in My Soup, & Zero-Days - Wrap Up](http://podcast.securityweekly.com/swn-204-struts-management-networks-elon-spits-in-my-soup-zero-days-wrap-up)
+  - [PSW #736 - Mike Wilkes & Amanda Berlin](http://podcast.securityweekly.com/psw-736-mike-wilkes-amanda-berlin)
