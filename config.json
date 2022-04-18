@@ -34,6 +34,11 @@
             "url": "https://github.com/Han0nly/SecurityRSS/blob/master/SecureRss.opml",
             "filename": "SecurityRSS.opml"
         },
+        "wechatRSS": {
+            "enabled": true,
+            "url": "https://www.inoreader.com/reader/api/0/bundle/opml/0014cd641489",
+            "filename": "wechatRSS.opml"
+        },
         "chinese-independent-blogs": {
             "enabled": false,
             "url": "https://raw.githubusercontent.com/timqian/chinese-independent-blogs/master/feed.opml",
