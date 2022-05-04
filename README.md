@@ -107,6 +107,6 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 
 ## LICENSE
 
-yarb use SATA(Star And Thank Author) [License](./LICENSE), so you have to star this project before using. 🙏
+[GNU General Public License v3.0](./LICENSE)
 
-[![Stargazers over time](https://starchart.cc/firmianay/yarb.svg)](https://starchart.cc/firmianay/yarb)
+[![Stargazers over time](https://starchart.cc/VulnTotal-Team/yarb.svg)](https://starchart.cc/VulnTotal-Team/yarb)

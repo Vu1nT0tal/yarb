@@ -1,6 +1,6 @@
 # https://docs.github.com/cn/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Push Push
+name: Update dailynews
 
 # 国际标准时间3点（北京时间11点）
 # on:
@@ -42,4 +42,4 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.vulntotal }}
