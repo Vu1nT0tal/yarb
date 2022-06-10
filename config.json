@@ -48,7 +48,7 @@
 
     "bot": {
         "feishu": {
-            "enabled": true,
+            "enabled": false,
             "secrets": "FEISHU_KEY",
             "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         },
@@ -63,14 +63,14 @@
             "key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         },
         "qq": {
-            "enabled": true,
+            "enabled": false,
             "secrets": "QQ_KEY",
             "qq_id": "2419110059",
             "group_id": ["808542982", "217863340"],
             "key": "xxxxxxxxxx"
         },
         "telegram":{
-            "enabled": true,
+            "enabled": false,
             "secrets": "TELEGRAM_KEY",
             "chat_id": ["-799557100"],
             "key": "xxxxxxxxxx"
