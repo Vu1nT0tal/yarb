@@ -235,6 +235,7 @@ class mailBot:
 
     def send(self, text: str):
         print(f'{len(text)} {text[:50]}...{text[-50:]}')
+        print(text)
 
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
