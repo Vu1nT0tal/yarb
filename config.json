@@ -15,7 +15,7 @@
             "filename": "CyberSecurityRSS.opml"
         },
         "CyberSecurityRSS-tiny": {
-            "enabled": true,
+            "enabled": false,
             "url": "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/tiny.opml",
             "filename": "CyberSecurityRSS-tiny.opml"
         },
@@ -25,18 +25,18 @@
             "filename": "Chinese-Security-RSS.opml"
         },
         "awesome-security-feed": {
-            "enabled": true,
+            "enabled": false,
             "url": "https://raw.githubusercontent.com/mrtouch93/awesome-security-feed/main/security_feeds.opml",
             "filename": "awesome-security-feed.opml"
         },
         "SecurityRSS": {
-            "enabled": true,
+            "enabled": false,
             "url": "https://github.com/Han0nly/SecurityRSS/blob/master/SecureRss.opml",
-            "filename": "SecurityRSS.opml"
+            "filename": "SecureRss.opml"
         },
         "wechatRSS": {
             "enabled": true,
-            "url": "https://www.inoreader.com/reader/api/0/bundle/opml/0014cd641489",
+            "url": "https://wechat2rss.xlab.app/opml/sec.opml",
             "filename": "wechatRSS.opml"
         },
         "chinese-independent-blogs": {
