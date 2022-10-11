@@ -7,4 +7,5 @@ pyyaml
 python-telegram-bot
 PySocks
 pyrate-limiter
+poetry
 git+https://github.com/kurtmckee/listparser

@@ -78,9 +78,11 @@
         "mail": {
             "enabled": true,
             "secrets": "MAIL_KEY",
+            "secrets_receiver": "MAIL_RECEIVER",
             "address": "firmianay@163.com",
             "server": "smtp.163.com",
-            "receiver": ["2419110059@qq.com"],
+            "from": "security-bot <yangchao@lixiang.com>",
+            "receiver": "a@163.com,b@163.com",
             "key": "xxxxxxxxxx"
         }
     }

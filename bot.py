@@ -201,9 +201,10 @@ class qqBot:
 class mailBot:
     """邮件机器人
     """
-    def __init__(self, sender, passwd, receiver: list, server='') -> None:
+    def __init__(self, sender, passwd, receiver: str, fromwho='', server='') -> None:
         self.sender = sender
         self.receiver = receiver
+        self.fromwho = fromwho or sender
         server = server or self.get_server(sender)
 
         self.smtp = smtplib.SMTP_SSL(server)
@@ -239,8 +240,8 @@ class mailBot:
 
         msg = MIMEText(text, 'html')
         msg['Subject'] = Header(f'每日安全资讯（{today}）')
-        msg['From'] = f'security-bot <{self.sender}>'
-        msg['To'] = ','.join(self.receiver)
+        msg['From'] = self.fromwho
+        msg['To'] = self.receiver
 
         try:
             self.smtp.sendmail(self.sender, self.receiver, msg.as_string())

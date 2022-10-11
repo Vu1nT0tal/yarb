@@ -94,7 +94,7 @@ def parseThread(url: str, proxy_url=''):
             if pubday == yesterday:
                 item = {entry.title: entry.link}
                 print(item)
-                result.update(item)
+                result |= item
         Color.print_success(f'[+] {title}\t{url}\t{len(result.values())}/{len(r.entries)}')
     except Exception as e:
         Color.print_failed(f'[-] failed: {url}')
@@ -107,11 +107,13 @@ def init_bot(conf: dict, proxy_url=''):
     bots = []
     for name, v in conf.items():
         if v['enabled']:
-            key = os.getenv(v['secrets'])
-            if not key:
-                key = v['key']
+            key = os.getenv(v['secrets']) or v['key']
 
-            if name == 'qq':
+            if name == 'mail':
+                receiver = os.getenv(v['secrets_receiver']) or v['receiver']
+                bot = globals()[f'{name}Bot'](v['address'], key, receiver, v['from'], v['server'])
+                bots.append(bot)
+            elif name == 'qq':
                 bot = globals()[f'{name}Bot'](v['group_id'])
                 if bot.start_server(v['qq_id'], key):
                     bots.append(bot)
@@ -119,9 +121,6 @@ def init_bot(conf: dict, proxy_url=''):
                 bot = globals()[f'{name}Bot'](key, v['chat_id'], proxy_url)
                 if bot.test_connect():
                     bots.append(bot)
-            elif name == 'mail':
-                bot = globals()[f'{name}Bot'](v['address'], key, v['receiver'], v['server'])
-                bots.append(bot)
             else:
                 bot = globals()[f'{name}Bot'](key, proxy_url)
                 bots.append(bot)
@@ -178,9 +177,6 @@ def job(args):
     with open(config_path) as f:
         conf = json.load(f)
 
-    proxy_bot = conf['proxy']['url'] if conf['proxy']['bot'] else ''
-    bots = init_bot(conf['bot'], proxy_bot)
-
     proxy_rss = conf['proxy']['url'] if conf['proxy']['rss'] else ''
     feeds = init_rss(conf['rss'], args.update, proxy_rss)
 
@@ -210,6 +206,8 @@ def job(args):
         update_today(results)
 
     # 推送文章
+    proxy_bot = conf['proxy']['url'] if conf['proxy']['bot'] else ''
+    bots = init_bot(conf['bot'], proxy_bot)
     for bot in bots:
         bot.send(bot.parse_results(results))
 
