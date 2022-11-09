@@ -29,14 +29,9 @@
             "url": "https://raw.githubusercontent.com/mrtouch93/awesome-security-feed/main/security_feeds.opml",
             "filename": "awesome-security-feed.opml"
         },
-        "SecurityRSS": {
-            "enabled": false,
-            "url": "https://github.com/Han0nly/SecurityRSS/blob/master/SecureRss.opml",
-            "filename": "SecureRss.opml"
-        },
         "wechatRSS": {
             "enabled": true,
-            "url": "https://wechat2rss.xlab.app/opml/sec.opml",
+            "url": "https://raw.githubusercontent.com/ttttmr/Wechat2RSS/master/static/opml/sec.opml",
             "filename": "wechatRSS.opml"
         },
         "chinese-independent-blogs": {

@@ -15,7 +15,7 @@
 ## 安装
 
 ```sh
-$ git clone https://github.com/firmianay/yarb.git
+$ git clone https://github.com/VulnTotal-Team/yarb.git
 $ cd yarb && ./install.sh
 ```
 
@@ -68,7 +68,6 @@ $ nohup ./yarb.py --cron 11:00 > run.log 2>&1 &
 - [CyberSecurityRSS](https://github.com/zer0yu/CyberSecurityRSS)
 - [Chinese-Security-RSS](https://github.com/zhengjim/Chinese-Security-RSS)
 - [awesome-security-feed](https://github.com/mrtouch93/awesome-security-feed)
-- [SecurityRSS](https://github.com/Han0nly/SecurityRSS)
 - [安全技术公众号](https://github.com/ttttmr/wechat2rss)
 - [SecWiki 安全聚合](https://www.sec-wiki.com/opml/index)
 - [Hacking8 安全信息流](https://i.hacking8.com/)
