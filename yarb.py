@@ -70,8 +70,15 @@ def update_rss(rss: dict, proxy_url=''):
     return result
 
 
-def parseThread(url: str, proxy_url=''):
+def parseThread(conf: dict, url: str, proxy_url=''):
     """获取文章线程"""
+    def filter(title: str):
+        """过滤文章"""
+        for i in conf['exclude']:
+            if i in title:
+                return False
+        return True
+
     proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
@@ -86,12 +93,10 @@ def parseThread(url: str, proxy_url=''):
         r = feedparser.parse(r.content)
         title = r.feed.title
         for entry in r.entries:
-            d = entry.get('published_parsed')
-            if not d:
-                d = entry.updated_parsed
+            d = entry.get('published_parsed') or entry.get('updated_parsed')
             yesterday = datetime.date.today() + datetime.timedelta(-1)
             pubday = datetime.date(d[0], d[1], d[2])
-            if pubday == yesterday:
+            if pubday == yesterday and filter(entry.title):
                 item = {entry.title: entry.link}
                 print(item)
                 result |= item
@@ -189,7 +194,7 @@ def job(args):
         numb = 0
         tasks = []
         with ThreadPoolExecutor(100) as executor:
-            tasks.extend(executor.submit(parseThread, url, proxy_rss) for url in feeds)
+            tasks.extend(executor.submit(parseThread, conf['keywords'], url, proxy_rss) for url in feeds)
             for task in as_completed(tasks):
                 title, result = task.result()            
                 if result:
