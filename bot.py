@@ -232,6 +232,7 @@ class mailBot:
                 text += f'<li><a href="{link}">{title}</a></li>'
             text += '</ul>'
         text += '<br><br><b>如不需要，可直接回复本邮件退订。</b></body></html>'
+        print(text)
         return text
 
     def send(self, text: str):
