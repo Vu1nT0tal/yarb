@@ -26,7 +26,7 @@
             "filename": "Chinese-Security-RSS.opml"
         },
         "awesome-security-feed": {
-            "enabled": false,
+            "enabled": true,
             "url": "https://raw.githubusercontent.com/mrtouch93/awesome-security-feed/main/security_feeds.opml",
             "filename": "awesome-security-feed.opml"
         },
