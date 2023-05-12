@@ -1,7 +1,7 @@
+rich
 requests
 feedparser
 pyfiglet
-colorama
 schedule
 pyyaml
 python-telegram-bot

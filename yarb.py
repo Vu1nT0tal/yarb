@@ -13,7 +13,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from bot import *
-from utils import Color, Pattern
+from utils import *
 
 import requests
 requests.packages.urllib3.disable_warnings()
@@ -100,9 +100,9 @@ def parseThread(conf: dict, url: str, proxy_url=''):
                 item = {entry.title: entry.link}
                 print(item)
                 result |= item
-        Color.print_success(f'[+] {title}\t{url}\t{len(result.values())}/{len(r.entries)}')
+        console.print(f'[+] {title}\t{url}\t{len(result.values())}/{len(r.entries)}', style='bold green')
     except Exception as e:
-        Color.print_failed(f'[-] failed: {url}')
+        console.print(f'[-] failed: {url}', style='bold red')
         print(e)
     return title, result
 
@@ -157,10 +157,10 @@ def init_rss(conf: dict, update: bool=False, proxy_url=''):
                 if not check:
                     feeds.append(url)
         except Exception as e:
-            Color.print_failed(f'[-] 解析失败：{value}')
+            console.print(f'[-] 解析失败：{value}', style='bold red')
             print(e)
 
-    Color.print_focus(f'[+] {len(feeds)} feeds')
+    console.print(f'[+] {len(feeds)} feeds', style='bold yellow')
     return feeds
 
 
@@ -200,12 +200,12 @@ def job(args):
                 if result:
                     numb += len(result.values())
                     results.append({title: result})
-        Color.print_focus(f'[+] {len(results)} feeds, {numb} articles')
+        console.print(f'[+] {len(results)} feeds, {numb} articles', style='bold yellow')
 
         # temp_path = root_path.joinpath('temp_data.json')
         # with open(temp_path, 'w+') as f:
         #     f.write(json.dumps(results, indent=4, ensure_ascii=False))
-        #     Color.print_focus(f'[+] temp data: {temp_path}')
+        #     console.print(f'[+] temp data: {temp_path}', style='bold yellow')
 
         # 更新today
         update_today(results)

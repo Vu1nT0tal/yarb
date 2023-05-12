@@ -11,7 +11,7 @@ from pathlib import Path
 from datetime import datetime
 from pyrate_limiter import Duration, Limiter, RequestRate
 
-from utils import Color
+from utils import *
 
 __all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "telegramBot", "mailBot"]
 today = datetime.now().strftime("%Y-%m-%d")
@@ -46,9 +46,9 @@ class feishuBot:
             r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
             if r.status_code == 200:
-                Color.print_success('[+] feishuBot 发送成功')
+                console.print('[+] feishuBot 发送成功', style='bold green')
             else:
-                Color.print_failed('[-] feishuBot 发送失败')
+                console.print('[-] feishuBot 发送失败', style='bold red')
                 print(r.text)
 
     def send_markdown(self, text):
@@ -88,9 +88,9 @@ class wecomBot:
                 r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
                 if r.status_code == 200:
-                    Color.print_success('[+] wecomBot 发送成功')
+                    console.print('[+] wecomBot 发送成功', style='bold green')
                 else:
-                    Color.print_failed('[-] wecomBot 发送失败')
+                    console.print('[-] wecomBot 发送失败', style='bold red')
                     print(r.text)
 
 
@@ -123,9 +123,9 @@ class dingtalkBot:
                 r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
                 if r.status_code == 200:
-                    Color.print_success('[+] dingtalkBot 发送成功')
+                    console.print('[+] dingtalkBot 发送成功', style='bold green')
                 else:
-                    Color.print_failed('[-] dingtalkBot 发送失败')
+                    console.print('[-] dingtalkBot 发送失败', style='bold red')
                     print(r.text)
 
 
@@ -160,11 +160,11 @@ class qqBot:
                     try:
                         r = requests.post(f'{self.server}/send_group_msg?group_id={id}&&message={text}')
                         if r.status_code == 200:
-                            Color.print_success(f'[+] qqBot 发送成功 {id}')
+                            console.print(f'[+] qqBot 发送成功 {id}', style='bold green')
                         else:
-                            Color.print_failed(f'[-] qqBot 发送失败 {id}')
+                            console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
                     except Exception as e:
-                        Color.print_failed(f'[-] qqBot 发送失败 {id}')
+                        console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
                         print(e)
 
     def start_server(self, qq_id, qq_passwd, timeout=60):
@@ -182,14 +182,14 @@ class qqBot:
         while True:
             try:
                 requests.get(self.server)
-                Color.print_success('[+] qqBot 启动成功')
+                console.print('[+] qqBot 启动成功', style='bold green')
                 return True
             except Exception as e:
                 time.sleep(1)
 
             if time.time() > timeout:
                 qqBot.kill_server()
-                Color.print_failed('[-] qqBot 启动失败')
+                console.print('[-] qqBot 启动失败', style='bold red')
                 return False
 
     @classmethod
@@ -245,9 +245,9 @@ class mailBot:
 
         try:
             self.smtp.sendmail(self.sender, self.receiver.split(','), msg.as_string())
-            Color.print_success('[+] mailBot 发送成功')
+            console.print('[+] mailBot 发送成功', style='bold green')
         except Exception as e:
-            Color.print_failed('[+] mailBot 发送失败')
+            console.print('[+] mailBot 发送失败', style='bold red')
             print(e)
 
 
@@ -265,7 +265,7 @@ class telegramBot:
             self.bot.get_me()
             return True
         except Exception as e:
-            Color.print_failed('[-] telegramBot 连接失败')
+            console.print('[-] telegramBot 连接失败', style='bold red')
             return False
 
     @staticmethod
@@ -288,7 +288,7 @@ class telegramBot:
                 for id in self.chat_id:
                     try:
                         self.bot.send_message(chat_id=id, text=text, parse_mode='HTML')
-                        Color.print_success(f'[+] telegramBot 发送成功 {id}')
+                        console.print(f'[+] telegramBot 发送成功 {id}', style='bold green')
                     except Exception as e:
-                        Color.print_failed(f'[-] telegramBot 发送失败 {id}')
+                        console.print(f'[-] telegramBot 发送失败 {id}', style='bold red')
                         print(e)
