@@ -13,7 +13,8 @@ from pyrate_limiter import Duration, Limiter, RequestRate
 
 from utils import *
 
-__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "telegramBot", "mailBot"]
+__all__ = ["feishuBot", "wecomBot", "dingtalkBot",
+           "qqBot", "telegramBot", "mailBot"]
 today = datetime.now().strftime("%Y-%m-%d")
 
 
@@ -21,9 +22,11 @@ class feishuBot:
     """飞书群机器人
     https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN
     """
+
     def __init__(self, key, proxy_url='') -> None:
         self.key = key
-        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {
+            'http': None, 'https': None}
 
     @staticmethod
     def parse_results(results: list):
@@ -43,7 +46,8 @@ class feishuBot:
             data = {"msg_type": "text", "content": {"text": text}}
             headers = {'Content-Type': 'application/json'}
             url = f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.key}'
-            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+            r = requests.post(url=url, headers=headers,
+                              data=json.dumps(data), proxies=self.proxy)
 
             if r.status_code == 200:
                 console.print('[+] feishuBot 发送成功', style='bold green')
@@ -61,9 +65,11 @@ class wecomBot:
     """企业微信群机器人
     https://developer.work.weixin.qq.com/document/path/91770
     """
+
     def __init__(self, key, proxy_url='') -> None:
         self.key = key
-        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {
+            'http': None, 'https': None}
 
     @staticmethod
     def parse_results(results: list):
@@ -85,7 +91,8 @@ class wecomBot:
                 data = {"msgtype": "markdown", "markdown": {"content": text}}
                 headers = {'Content-Type': 'application/json'}
                 url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
-                r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+                r = requests.post(url=url, headers=headers,
+                                  data=json.dumps(data), proxies=self.proxy)
 
                 if r.status_code == 200:
                     console.print('[+] wecomBot 发送成功', style='bold green')
@@ -98,29 +105,37 @@ class dingtalkBot:
     """钉钉群机器人
     https://open.dingtalk.com/document/robots/custom-robot-access
     """
+
     def __init__(self, key, proxy_url='') -> None:
         self.key = key
-        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {'http': None, 'https': None}
+        self.proxy = {'http': proxy_url, 'https': proxy_url} if proxy_url else {
+            'http': None, 'https': None}
 
     @staticmethod
     def parse_results(results: list):
         text_list = []
         for result in results:
             (feed, value), = result.items()
-            text = ''.join(f'- [{title}]({link})\n' for title, link in value.items())
+            text = ''.join(
+                f'- [{title}]({link})\n' for title, link in value.items())
             text_list.append([feed, text.strip()])
         return text_list
 
     def send(self, text_list: list):
         limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
         for (feed, text) in text_list:
+            text = f'## {feed}\n' + text
+            text += f"\n\n <!-- Powered by Yarb. -->"
             with limiter.ratelimit('identity', delay=True):
                 print(f'{len(text)} {text[:50]}...{text[-50:]}')
-
-                data = {"msgtype": "markdown", "markdown": {"title": feed, "text": text}}
+                data = {"msgtype": "markdown", "markdown": {
+                    "title": feed, "text": text}}
                 headers = {'Content-Type': 'application/json'}
                 url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
-                r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
+                r = requests.post(url=url, headers=headers,
+                                  data=json.dumps(data), proxies=self.proxy)
+
+                print(r.content)
 
                 if r.status_code == 200:
                     console.print('[+] dingtalkBot 发送成功', style='bold green')
@@ -158,11 +173,14 @@ class qqBot:
 
                 for id in self.group_id:
                     try:
-                        r = requests.post(f'{self.server}/send_group_msg?group_id={id}&&message={text}')
+                        r = requests.post(
+                            f'{self.server}/send_group_msg?group_id={id}&&message={text}')
                         if r.status_code == 200:
-                            console.print(f'[+] qqBot 发送成功 {id}', style='bold green')
+                            console.print(
+                                f'[+] qqBot 发送成功 {id}', style='bold green')
                         else:
-                            console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
+                            console.print(
+                                f'[-] qqBot 发送失败 {id}', style='bold red')
                     except Exception as e:
                         console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
                         print(e)
@@ -195,12 +213,14 @@ class qqBot:
     @classmethod
     def kill_server(cls):
         pid_path = cls.cqhttp_path.joinpath('go-cqhttp.pid')
-        subprocess.run(f'cat {pid_path} | xargs kill', stderr=subprocess.DEVNULL, shell=True)
+        subprocess.run(f'cat {pid_path} | xargs kill',
+                       stderr=subprocess.DEVNULL, shell=True)
 
 
 class mailBot:
     """邮件机器人
     """
+
     def __init__(self, sender, passwd, receiver: str, fromwho='', server='') -> None:
         self.sender = sender
         self.receiver = receiver
@@ -244,7 +264,8 @@ class mailBot:
         msg['To'] = self.receiver
 
         try:
-            self.smtp.sendmail(self.sender, self.receiver.split(','), msg.as_string())
+            self.smtp.sendmail(
+                self.sender, self.receiver.split(','), msg.as_string())
             console.print('[+] mailBot 发送成功', style='bold green')
         except Exception as e:
             console.print('[+] mailBot 发送失败', style='bold red')
@@ -255,6 +276,7 @@ class telegramBot:
     """Telegram机器人
     https://core.telegram.org/bots/api
     """
+
     def __init__(self, key, chat_id: list, proxy_url='') -> None:
         proxy = telegram.utils.request.Request(proxy_url=proxy_url)
         self.chat_id = chat_id
@@ -287,8 +309,11 @@ class telegramBot:
 
                 for id in self.chat_id:
                     try:
-                        self.bot.send_message(chat_id=id, text=text, parse_mode='HTML')
-                        console.print(f'[+] telegramBot 发送成功 {id}', style='bold green')
+                        self.bot.send_message(
+                            chat_id=id, text=text, parse_mode='HTML')
+                        console.print(
+                            f'[+] telegramBot 发送成功 {id}', style='bold green')
                     except Exception as e:
-                        console.print(f'[-] telegramBot 发送失败 {id}', style='bold red')
+                        console.print(
+                            f'[-] telegramBot 发送失败 {id}', style='bold red')
                         print(e)
