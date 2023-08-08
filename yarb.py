@@ -3,6 +3,7 @@
 import os
 import json
 import time
+import asyncio
 import schedule
 import pyfiglet
 import argparse
@@ -107,7 +108,7 @@ def parseThread(conf: dict, url: str, proxy_url=''):
     return title, result
 
 
-def init_bot(conf: dict, proxy_url=''):
+async def init_bot(conf: dict, proxy_url=''):
     """初始化机器人"""
     bots = []
     for name, v in conf.items():
@@ -120,11 +121,11 @@ def init_bot(conf: dict, proxy_url=''):
                 bots.append(bot)
             elif name == 'qq':
                 bot = globals()[f'{name}Bot'](v['group_id'])
-                if bot.start_server(v['qq_id'], key):
+                if await bot.start_server(v['qq_id'], key):
                     bots.append(bot)
             elif name == 'telegram':
                 bot = globals()[f'{name}Bot'](key, v['chat_id'], proxy_url)
-                if bot.test_connect():
+                if await bot.test_connect():
                     bots.append(bot)
             else:
                 bot = globals()[f'{name}Bot'](key, proxy_url)
@@ -169,7 +170,7 @@ def cleanup():
     qqBot.kill_server()
 
 
-def job(args):
+async def job(args):
     """定时任务"""
     print(f'{pyfiglet.figlet_format("yarb")}\n{today}')
 
@@ -212,9 +213,9 @@ def job(args):
 
     # 推送文章
     proxy_bot = conf['proxy']['url'] if conf['proxy']['bot'] else ''
-    bots = init_bot(conf['bot'], proxy_bot)
+    bots = await init_bot(conf['bot'], proxy_bot)
     for bot in bots:
-        bot.send(bot.parse_results(results))
+        await bot.send(bot.parse_results(results))
 
     cleanup()
 
@@ -227,13 +228,15 @@ def argument():
     parser.add_argument('--test', help='Test bot', action='store_true', required=False)
     return parser.parse_args()
 
-
-if __name__ == '__main__':
+async def main():
     args = argument()
     if args.cron:
         schedule.every().day.at(args.cron).do(job, args)
         while True:
             schedule.run_pending()
-            time.sleep(1)
+            await asyncio.sleep(1)
     else:
-        job(args)
+        await job(args)
+
+if __name__ == '__main__':
+    asyncio.run(main())
