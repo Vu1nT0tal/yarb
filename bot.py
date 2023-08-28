@@ -9,12 +9,11 @@ from email.header import Header
 from email.mime.text import MIMEText
 from pathlib import Path
 from datetime import datetime
-from pyrate_limiter import Duration, Limiter, RequestRate
+from pyrate_limiter import Duration, Rate, InMemoryBucket, Limiter
 
 from utils import *
 
-__all__ = ["feishuBot", "wecomBot", "dingtalkBot",
-           "qqBot", "telegramBot", "mailBot"]
+__all__ = ["feishuBot", "wecomBot", "dingtalkBot", "qqBot", "telegramBot", "mailBot"]
 today = datetime.now().strftime("%Y-%m-%d")
 
 
@@ -83,22 +82,24 @@ class wecomBot:
         return text_list
 
     def send(self, text_list: list):
-        limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
+        rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
+        bucket = InMemoryBucket(rates)
+        limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
+
         for text in text_list:
-            with limiter.ratelimit('identity', delay=True):
-                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+            limiter.try_acquire('identity')
+            print(f'{len(text)} {text[:50]}...{text[-50:]}')
 
-                data = {"msgtype": "markdown", "markdown": {"content": text}}
-                headers = {'Content-Type': 'application/json'}
-                url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
-                r = requests.post(url=url, headers=headers,
-                                  data=json.dumps(data), proxies=self.proxy)
+            data = {"msgtype": "markdown", "markdown": {"content": text}}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.key}'
+            r = requests.post(url=url, headers=headers, data=json.dumps(data), proxies=self.proxy)
 
-                if r.status_code == 200:
-                    console.print('[+] wecomBot 发送成功', style='bold green')
-                else:
-                    console.print('[-] wecomBot 发送失败', style='bold red')
-                    print(r.text)
+            if r.status_code == 200:
+                console.print('[+] wecomBot 发送成功', style='bold green')
+            else:
+                console.print('[-] wecomBot 发送失败', style='bold red')
+                print(r.text)
 
 
 class dingtalkBot:
@@ -122,26 +123,29 @@ class dingtalkBot:
         return text_list
 
     def send(self, text_list: list):
-        limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
+        rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
+        bucket = InMemoryBucket(rates)
+        limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
+
         for (feed, text) in text_list:
-            text = f'## {feed}\n' + text
+            limiter.try_acquire('identity')
+
+            text = f'## {feed}\n{text}'
             text += f"\n\n <!-- Powered by Yarb. -->"
-            with limiter.ratelimit('identity', delay=True):
-                print(f'{len(text)} {text[:50]}...{text[-50:]}')
-                data = {"msgtype": "markdown", "markdown": {
-                    "title": feed, "text": text}}
-                headers = {'Content-Type': 'application/json'}
-                url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
-                r = requests.post(url=url, headers=headers,
-                                  data=json.dumps(data), proxies=self.proxy)
+            print(f'{len(text)} {text[:50]}...{text[-50:]}')
 
-                print(r.content)
+            data = {"msgtype": "markdown", "markdown": {
+                "title": feed, "text": text}}
+            headers = {'Content-Type': 'application/json'}
+            url = f'https://oapi.dingtalk.com/robot/send?access_token={self.key}'
+            r = requests.post(url=url, headers=headers,
+                                data=json.dumps(data), proxies=self.proxy)
 
-                if r.status_code == 200:
-                    console.print('[+] dingtalkBot 发送成功', style='bold green')
-                else:
-                    console.print('[-] dingtalkBot 发送失败', style='bold red')
-                    print(r.text)
+            if r.status_code == 200:
+                console.print('[+] dingtalkBot 发送成功', style='bold green')
+            else:
+                console.print('[-] dingtalkBot 发送失败', style='bold red')
+                print(r.text)
 
 
 class qqBot:
@@ -166,24 +170,24 @@ class qqBot:
         return text_list
 
     def send(self, text_list: list):
-        limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
-        for text in text_list:
-            with limiter.ratelimit('identity', delay=True):
-                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+        rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
+        bucket = InMemoryBucket(rates)
+        limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
 
-                for id in self.group_id:
-                    try:
-                        r = requests.post(
-                            f'{self.server}/send_group_msg?group_id={id}&&message={text}')
-                        if r.status_code == 200:
-                            console.print(
-                                f'[+] qqBot 发送成功 {id}', style='bold green')
-                        else:
-                            console.print(
-                                f'[-] qqBot 发送失败 {id}', style='bold red')
-                    except Exception as e:
+        for text in text_list:
+            limiter.try_acquire('identity')
+            print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
+            for id in self.group_id:
+                try:
+                    r = requests.post(f'{self.server}/send_group_msg?group_id={id}&&message={text}')
+                    if r.status_code == 200:
+                        console.print(f'[+] qqBot 发送成功 {id}', style='bold green')
+                    else:
                         console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
-                        print(e)
+                except Exception as e:
+                    console.print(f'[-] qqBot 发送失败 {id}', style='bold red')
+                    print(e)
 
     async def start_server(self, qq_id, qq_passwd, timeout=60):
         config_path = self.cqhttp_path.joinpath('config.yml')
@@ -306,18 +310,18 @@ class telegramBot:
         return text_list
 
     async def send(self, text_list: list):
-        limiter = Limiter(RequestRate(20, Duration.MINUTE))     # 频率限制，20条/分钟
-        for text in text_list:
-            with limiter.ratelimit('identity', delay=True):
-                print(f'{len(text)} {text[:50]}...{text[-50:]}')
+        rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
+        bucket = InMemoryBucket(rates)
+        limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
 
-                for id in self.chat_id:
-                    try:
-                        await self.bot.send_message(
-                            chat_id=id, text=text, parse_mode='HTML')
-                        console.print(
-                            f'[+] telegramBot 发送成功 {id}', style='bold green')
-                    except Exception as e:
-                        console.print(
-                            f'[-] telegramBot 发送失败 {id}', style='bold red')
-                        print(e)
+        for text in text_list:
+            limiter.try_acquire('identity')
+            print(f'{len(text)} {text[:50]}...{text[-50:]}')
+
+            for id in self.chat_id:
+                try:
+                    self.bot.send_message(chat_id=id, text=text, parse_mode='HTML')
+                    console.print(f'[+] telegramBot 发送成功 {id}', style='bold green')
+                except Exception as e:
+                    console.print(f'[-] telegramBot 发送失败 {id}', style='bold red')
+                    print(e)
