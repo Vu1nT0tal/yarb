@@ -38,7 +38,7 @@ class feishuBot:
             text_list.append(text.strip())
         return text_list
 
-    def send(self, text_list: list):
+    async def send(self, text_list: list):
         for text in text_list:
             print(f'{len(text)} {text[:50]}...{text[-50:]}')
 
@@ -54,7 +54,7 @@ class feishuBot:
                 console.print('[-] feishuBot 发送失败', style='bold red')
                 print(r.text)
 
-    def send_markdown(self, text):
+    async def send_markdown(self, text):
         # TODO 富文本
         data = {"msg_type": "text", "content": {"text": text}}
         self.send(data)
@@ -81,7 +81,7 @@ class wecomBot:
             text_list.append(text.strip())
         return text_list
 
-    def send(self, text_list: list):
+    async def send(self, text_list: list):
         rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
         bucket = InMemoryBucket(rates)
         limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
@@ -122,7 +122,7 @@ class dingtalkBot:
             text_list.append([feed, text.strip()])
         return text_list
 
-    def send(self, text_list: list):
+    async def send(self, text_list: list):
         rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
         bucket = InMemoryBucket(rates)
         limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
@@ -169,7 +169,7 @@ class qqBot:
             text_list.append(text.strip())
         return text_list
 
-    def send(self, text_list: list):
+    async def send(self, text_list: list):
         rates = [Rate(20, Duration.MINUTE)] # 频率限制，20条/分钟
         bucket = InMemoryBucket(rates)
         limiter = Limiter(bucket, max_delay=Duration.MINUTE.value)
@@ -259,7 +259,7 @@ class mailBot:
         print(text)
         return text
 
-    def send(self, text: str):
+    async def send(self, text: str):
         print(f'{len(text)} {text[:50]}...{text[-50:]}')
 
         msg = MIMEText(text, 'html')
