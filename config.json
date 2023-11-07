@@ -68,8 +68,8 @@
         "telegram":{
             "enabled": false,
             "secrets": "TELEGRAM_KEY",
-            "chat_id": ["-799557100"],
-            "key": "xxxxxxxxxx"
+            "chat_id": ["-1002040152997"],
+            "key": "6760281224:AAGj-8rjbwzlRYpvoqRaIZfvLhdcL0nl1j8"
         },
         "mail": {
             "enabled": false,
