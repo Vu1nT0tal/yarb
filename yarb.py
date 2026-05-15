@@ -90,7 +90,7 @@ def parseThread(conf: dict, url: str, proxy_url=''):
     title = ''
     result = {}
     try:
-        r = requests.get(url, timeout=10, headers=headers, verify=False, proxies=proxy)
+r = requests.get(url, timeout=10, headers=headers, verify=True, proxies=proxy)
         r = feedparser.parse(r.content)
         title = r.feed.title
         for entry in r.entries:
