@@ -192,13 +192,13 @@ class qqBot:
     async def start_server(self, qq_id, qq_passwd, timeout=60):
         config_path = self.cqhttp_path.joinpath('config.yml')
         with open(config_path, 'r') as f:
-            data = yaml.load(f, Loader=yaml.FullLoader)
+data = yaml.safe_load(f, Loader=yaml.FullLoader)
             data['account']['uin'] = int(qq_id)
             data['account']['password'] = qq_passwd
         with open(config_path, 'w+') as f:
             yaml.dump(data, f)
 
-        subprocess.run('cd cqhttp && ./go-cqhttp -d', shell=True)
+subprocess.run('cd cqhttp && ./go-cqhttp -d', shell=False)
 
         timeout = time.time() + timeout
         while True:
