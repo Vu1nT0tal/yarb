@@ -95,6 +95,8 @@ def parseThread(conf: dict, url: str, proxy_url=''):
         title = r.feed.title
         for entry in r.entries:
             d = entry.get('published_parsed') or entry.get('updated_parsed')
+            if not d:
+                continue
             yesterday = datetime.date.today() + datetime.timedelta(-1)
             pubday = datetime.date(d[0], d[1], d[2])
             if pubday == yesterday and filter(entry.title):
