@@ -1,110 +1,90 @@
-# 每日安全资讯（2026-10-25）
+# 每日安全资讯（2026-10-26）
 
-- Cybernews News
-  - [Hackers steal 8.3M records from crime tip platform used by schools, police nationwide](https://cybernews.com/security/navigate360-crime-tips-data-breach-nevada-schools/)
 - SecWiki News
-  - [SecWiki News 2026-10-24 Review](http://www.sec-wiki.com/?2026-10-24)
-- Kitploit — Hacking, PenTest, and Cybersecurity Tools for Your Security Arsenal!
-  - [thc-BloodMiami](https://kitploit.com/en/tools/github/foxcornlab/thc-bloodmiami)
-  - [smolvm v1.32.1](https://kitploit.com/en/posts/smolvm-433aa3ac7cdd2127)
-  - [Signet](https://kitploit.com/en/tools/github/whispergate/signet)
-  - [emudhra-weak-keys](https://kitploit.com/en/tools/github/corelight/emudhra-weak-keys)
-  - [betterleaks](https://kitploit.com/en/tools/github/betterleaks/betterleaks)
-  - [NETworkManager v2026.10.24.0](https://kitploit.com/en/posts/networkmanager-bc330e961d8344db)
-  - [opengrep](https://kitploit.com/en/tools/github/opengrep/opengrep)
-  - [cdxgen](https://kitploit.com/en/tools/github/cdxgen/cdxgen)
-  - [MarauderBox](https://kitploit.com/en/tools/github/rianhanft/marauderbox)
-  - [system_prompts_leaks — Updated!](https://kitploit.com/en/posts/system_prompts_leaks-914517543fd369f3)
-  - [promptfoo v0.125.0](https://kitploit.com/en/posts/promptfoo-da4baa7e9942f143)
-  - [dsh-infinite-gen-5](https://kitploit.com/en/tools/github/minglink/dsh-infinite-gen-5)
-  - [jumpserver v4.10.20](https://kitploit.com/en/posts/jumpserver-1000767f792a0357)
-  - [SudoStamp](https://kitploit.com/en/tools/gitlab/ritwick7/sudostamp)
-  - [pycdc](https://kitploit.com/en/tools/github/ejfkdev/pycdc)
+  - [SecWiki News 2026-10-25 Review](http://www.sec-wiki.com/?2026-10-25)
+- Sploitus.com Exploits RSS Feed
+  - [Exploit for Improperly Controlled Sequential Memory Allocation in Php](https://sploitus.com/exploit?id=77FF2880-4364-5A6F-B92D-6307F45BE3A8&utm_source=rss&utm_medium=rss)
+  - [ghostlock-firetv-tank exploit](https://sploitus.com/exploit?id=7553245C-F86F-5D1C-8FB3-3A79C1CF58E6&utm_source=rss&utm_medium=rss)
+  - [django-defender exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-JAZZBAND-DJANGO-DEFENDER&utm_source=rss&utm_medium=rss)
+  - [Brida exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-FEDERICODOTTA-BRIDA&utm_source=rss&utm_medium=rss)
+  - [aurora exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-FRIDA-AURORA&utm_source=rss&utm_medium=rss)
+  - [mothership_c2 exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITLAB-CEALD1-MOTHERSHIP_C2&utm_source=rss&utm_medium=rss)
+  - [diaphora exploit](https://sploitus.com/exploit?id=KITPLOIT:8064870772254386067&utm_source=rss&utm_medium=rss)
+  - [JSShell exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-DEN1AL-JSSHELL&utm_source=rss&utm_medium=rss)
+  - [LadonGo exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-K8GEGE-LADONGO&utm_source=rss&utm_medium=rss)
 - Hexacorn
-  - [Solving practical problems with AI – Part 2 – the most popular, and most commonly used passwords for malicious archives…](https://www.hexacorn.com/blog/2026/10/24/solving-practical-problems-with-ai-part-2-the-most-popular-and-most-commonly-used-passwords-for-malicious-archives/)
+  - [ripgrep as a lolbin](https://www.hexacorn.com/blog/2026/10/25/ripgrep-as-a-lolbin/)
 - Reverse Engineering
-  - [Full source: autonomous root chain for TCL Android TV via CVE-2022-22706 Mali GPU page-cache write — libc __cxa_atexit shellcode, SELinux bypass](https://www.reddit.com/r/ReverseEngineering/comments/1xe68bj/full_source_autonomous_root_chain_for_tcl_android/)
-  - [NativeMirror - PE-sieve functionality in pure Object Pascal, including HollowsHunter integration (as native Delphi written Dll)](https://www.reddit.com/r/ReverseEngineering/comments/1xecayr/nativemirror_pesieve_functionality_in_pure_object/)
-  - [Android: Promon Shield reversal & bypass](https://www.reddit.com/r/ReverseEngineering/comments/1xe93em/android_promon_shield_reversal_bypass/)
-  - [[Writeup] Rooting a locked bootloader phone with Ghostlock](https://www.reddit.com/r/ReverseEngineering/comments/1xe70jy/writeup_rooting_a_locked_bootloader_phone_with/)
-  - [Java vs Rust Ghidra in REA: early benchmarks from a work-in-progress Rust port](https://www.reddit.com/r/ReverseEngineering/comments/1xe5lol/java_vs_rust_ghidra_in_rea_early_benchmarks_from/)
-  - [KRAKEN - AI Assisted RE, Patching, and Rust Rewrites. Written in Rust](https://www.reddit.com/r/ReverseEngineering/comments/1xe1meb/kraken_ai_assisted_re_patching_and_rust_rewrites/)
-- 奇客Solidot–传递最新科技情报
-  - [一种远古病毒可能阻碍黑猩猩演化出与人类相似的大脑](https://www.solidot.org/story?sid=85702)
-  - [为让数据中心有充足电力 Google 将付钱给其他人少用电](https://www.solidot.org/story?sid=85701)
-  - [研究揭示丹尼索瓦人的长相](https://www.solidot.org/story?sid=85700)
-  - [美光桃园厂工会否决奖金方案](https://www.solidot.org/story?sid=85699)
-  - [Google 修改隐私条款将 Gmail 和照片数据用于个性化广告](https://www.solidot.org/story?sid=85698)
-- 黑海洋 - AI工具与技术教程分享平台 | 免费资源·开发实战·安全资讯
-  - [Hoistbay：免费开源的 S3 客户端，支持 CloudFront 缓存刷新](https://blog.upx8.com/Hoistbay-S3-CloudFront)
-- 绿盟科技技术博客
-  - [绿盟科技顾杜娟博士获评 “2026中国网络安全十大人物”，前沿研发实力获行业认可](https://blog.nsfocus.net/%e7%bb%bf%e7%9b%9f%e7%a7%91%e6%8a%80%e9%a1%be%e6%9d%9c%e5%a8%9f%e5%8d%9a%e5%a3%ab%e8%8e%b7%e8%af%84-2026%e4%b8%ad%e5%9b%bd%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e5%8d%81%e5%a4%a7%e4%ba%ba/)
+  - [I've partially reverse-engineered Oblivion Remastered with Claude to fix its performance (+40% FPS in my benchmark scenario)](https://www.reddit.com/r/ReverseEngineering/comments/1xeyph9/ive_partially_reverseengineered_oblivion/)
+  - [Five Open Source Ghidra SLEIGH Implementations](https://www.reddit.com/r/ReverseEngineering/comments/1xf817x/five_open_source_ghidra_sleigh_implementations/)
+  - [An in-depth technical explanation of PHP2SHell](https://www.reddit.com/r/ReverseEngineering/comments/1xfbyb5/an_indepth_technical_explanation_of_php2shell/)
+  - [Velum-VMM](https://www.reddit.com/r/ReverseEngineering/comments/1xf7qco/velumvmm/)
+  - [Velum Hypervisor](https://www.reddit.com/r/ReverseEngineering/comments/1xf8dn2/velum_hypervisor/)
+  - [Velum hypervisor](https://www.reddit.com/r/ReverseEngineering/comments/1xf7tti/velum_hypervisor/)
+  - [Velum-VMM - Hook System Call on Modern Windows](https://www.reddit.com/r/ReverseEngineering/comments/1xf6xsk/velumvmm_hook_system_call_on_modern_windows/)
+  - [I built a tiny multiplayer game whose only purpose is to be reverse engineered — Lab 1 (derive the whole protocol from a pcap) is free](https://www.reddit.com/r/ReverseEngineering/comments/1xepsq0/i_built_a_tiny_multiplayer_game_whose_only/)
+  - [GitHub - QuitCool/cursor-reversed: Cursor, reverse-engineered and reconstructed. Explore its client architecture, customize the interface, and rebuild locally with editable source fragments and standalone tooling.](https://www.reddit.com/r/ReverseEngineering/comments/1xf0ior/github_quitcoolcursorreversed_cursor/)
+  - [scLock: A 256-Slot Polymorphic Non-Linear MBA (Z_2^64) VM Bound to the Apple Secure Enclave — Public macOS arm64 CrackMe & Write-Up](https://www.reddit.com/r/ReverseEngineering/comments/1xew4z6/sclock_a_256slot_polymorphic_nonlinear_mba_z_264/)
+  - [REVERSE ENGINEER THIS SITE, reverse engineer this sites api? just the /api/events, i wanna know how they get their X posts and rss feeds and normalizes them](https://www.reddit.com/r/ReverseEngineering/comments/1xeq2np/reverse_engineer_this_site_reverse_engineer_this/)
+- 黑海洋 - AI工具与技术教程｜免费资源与开发实战
+  - [PHP基金会执行董事：PHP严重资金不足，仅有一名全职员工](https://blog.upx8.com/PHP%E5%9F%BA%E9%87%91%E4%BC%9A%E6%89%A7%E8%A1%8C%E8%91%A3%E4%BA%8B-PHP%E4%B8%A5%E9%87%8D%E8%B5%84%E9%87%91%E4%B8%8D%E8%B6%B3-%E4%BB%85%E6%9C%89%E4%B8%80%E5%90%8D%E5%85%A8%E8%81%8C%E5%91%98%E5%B7%A5)
+  - [DeepSeek Harness 破甲 网络安全红队工具（dsh-purge）](https://blog.upx8.com/DeepSeek-Harness-dsh-purge)
+  - [利用 PHP2SHELL 漏洞来窃取我的比特币](https://blog.upx8.com/%E5%88%A9%E7%94%A8-PHP2SHELL-%E6%BC%8F%E6%B4%9E%E6%9D%A5%E7%AA%83%E5%8F%96%E6%88%91%E7%9A%84%E6%AF%94%E7%89%B9%E5%B8%81)
 - 黑鸟
-  - [给AI装的技能包，可能正藏着会“隐身”的恶意指令](https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189513&idx=1&sn=b831b3dc972a940b1ceeae38901da6cb)
-- 皮相
-  - [用缓冲区溢出漏洞把 3090 变成 A6000](https://mp.weixin.qq.com/s?__biz=MzI0NDA5MDYyNA==&mid=2648257357&idx=1&sn=c482ffd6634a20578df7b4fbcac341a3)
-- 我的安全视界观
-  - [我的读书笔记：把自己当成一家私人公司](https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247488147&idx=1&sn=1078ac7ce4b922f3f17507af4aaa9867)
+  - [拆开自家电视后，他看到了让自己后背发凉的数据流](https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189533&idx=1&sn=034020969d33001260b18c5b3ce4b0a8)
+- 奇客Solidot–传递最新科技情报
+  - [在 Google 砍伐了上千英亩树后野狼来到芬兰的村庄](https://www.solidot.org/story?sid=85706)
+  - [深水地平线漏油事件 16 年后海洋仍未恢复](https://www.solidot.org/story?sid=85705)
+  - [撸狗有助于抵抗下一次压力](https://www.solidot.org/story?sid=85703)
 - 奶牛安全
-  - [数据泄露情报2026.10.24 - 18万Edge加密货](https://mp.weixin.qq.com/s?__biz=MzU4NjY0NTExNA==&mid=2247489967&idx=1&sn=4a25b89710fd832f820463bdb4bc1aa3)
-  - [数据泄露情报2026.10.24 - 18万Edge加密货币钱包数据泄露](https://mp.weixin.qq.com/s?__biz=MzU4NjY0NTExNA==&mid=2247489961&idx=1&sn=97877b0d210e390789b2adecf826c499)
-- 绿盟科技研究通讯
-  - [AI与云安全事件案例分析周报2026.10.19 - 2026.10.23](https://mp.weixin.qq.com/s?__biz=MzIyODYzNTU2OA==&mid=2247500394&idx=1&sn=ca20557177ad2d6f49d3ae22b17edb99)
-- 安全圈
-  - [【安全圈】荷兰白帽暗推两百万补丁！终结废弃软件僵尸网络危机](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079481&idx=1&sn=dc63f64ee6d18a7d91f3bd9f1b5d0114)
-  - [【安全圈】Brotli解压越界写引爆供应链！Node等全系沦陷](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079481&idx=2&sn=fe9a1828c37180934ccad8c4431b604f)
-  - [【安全圈】Ruby正则引擎爆底层缺陷！4个GitLab满分RCE连环穿](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079481&idx=3&sn=31aadf7c74c78b0772524533b6b041be)
-- 中国信息安全
-  - [习近平向2026全球治理论坛（雄安）致信](https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664268042&idx=1&sn=400ad8a1970f8e8dda1b296034147a6b)
-  - [​CNNVD | 关于Oracle多个安全漏洞的通报](https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664268042&idx=2&sn=71a59aafc70cba6b438a146e3ea08492)
-- 数世咨询
-  - [Anthropic 收购机密 AI 初创公司 Opaque Systems](https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247544292&idx=1&sn=2b094aa1a73ca61f839125f36332a567)
-  - [KCon 2026 议题抢先看：当 AI 开始行动，安全如何以更高标准重画边界？](https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247544292&idx=2&sn=e63b97d4850ac22a13d657a7bcc82dac)
-- 极客公园
-  - [今年的 1024，可能是最后一个程序员节](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653115374&idx=1&sn=c5633cf8674bab7bca9f3c4035ce0ddb)
-  - [Kimi 发布 K3.1 Pro，加量降价挑战 Opus 5.5](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653115365&idx=1&sn=50b8174698e22b5264a97a5b30078827)
-  - [iPhone Duo正式交付；Kimi K3.1 Pro 、Seedance 2.5 4K正式发布；红果短剧上线防沉迷｜极客早知道](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653115362&idx=1&sn=da9937f9d32e1027c138781f2eb14dbc)
-- 火绒安全
-  - [诚邀渠道合作伙伴共启新征程](https://mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg==&mid=2247538444&idx=2&sn=d9c3ca0d81e060d68e5d59f89c4bf7f7)
+  - [数据泄露情报2026.10.25 - 636G俄罗斯1.6亿](https://mp.weixin.qq.com/s?__biz=MzU4NjY0NTExNA==&mid=2247489985&idx=1&sn=c2b7bb5c4b5c1880949f9b1ffa42095d)
+  - [数据泄露情报2026.10.25 - 636G俄罗斯1.6亿全体公民数据](https://mp.weixin.qq.com/s?__biz=MzU4NjY0NTExNA==&mid=2247489979&idx=1&sn=1ebc72a6d268140e5764cb5f040e3bf3)
 - 奇安信 CERT
-  - [【新增产品解决方案】PHP 远程代码执行漏洞(CVE-2026-109618、CVE-2026-109619)安全风险通告](https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507922&idx=1&sn=82033e97fa3b85bf4568719ff8828401)
-- 丁爸 情报分析师的工具箱
-  - [【工具】免费 OSINT 工具平台：Max Intel](https://mp.weixin.qq.com/s?__biz=MzI2MTE0NTE3Mw==&mid=2651157828&idx=1&sn=728e0cd096acc01608e208fd899e7437)
-- 复旦白泽战队
-  - [讲座预告 | 复旦白泽青年学者论坛系列活动第四期预告](https://mp.weixin.qq.com/s?__biz=MzU4NzUxOTI0OQ==&mid=2247500091&idx=1&sn=05d4c7dee128f72ed0b8fdfc1780a2bd)
+  - [【攻击检测规则与迹象排查】PHP 远程代码执行漏洞(CVE-2026-109618、CVE-2026-109619)安全风险通告](https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507942&idx=1&sn=1d806a8c45e242baca7ea7cd201c68df)
+- 安全圈
+  - [【安全圈】安克耐克盒马企微账号集体发黄！](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079533&idx=1&sn=3def0afbf0b2dc7e65df6c5e0012ad21)
+  - [【安全圈】2亿条快递数据挂暗网！9月全球泄露月报出炉](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079533&idx=2&sn=2d49acd3dee2a65c4a6580b42705a5c3)
+  - [【安全圈】AI攻陷全球互联网！48小时27个核弹级漏洞](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079533&idx=3&sn=f65f1a03fd53580838c1a448c50df754)
+- 天御攻防实验室
+  - [人比漏洞可怕](https://mp.weixin.qq.com/s?__biz=MzU0MzgyMzM2Nw==&mid=2247487290&idx=1&sn=4e9b432cc478032f34fd84756fafe538)
+- 看雪学苑
+  - [议程公布｜腾讯数字生态大会 Agent 安全专场](https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458623105&idx=1&sn=df3cd640a3466199d7a695a824587cd1)
+  - [C++ 虚表全解剖：从对象内存布局到 glibc IO 攻击链路](https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458623105&idx=2&sn=b244e461bccb5085fae88e4c270a70a2)
+- 极客公园
+  - [造物 100 #11｜9899 元的 18K 黄金戒指、积木机器人帮你看家、家里还能「种」蘑菇陪你](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653115391&idx=1&sn=41ac30fe933a54a8baacf309cf3ce750)
+  - [苹果首批折叠屏遭集中投诉；英国宣布超过 6 亿英镑 AI 投资计划；刘慈欣监制《三体·大史》年内开机 | 极客早知道](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653115385&idx=1&sn=4117ead8f8e61e97f181b66087aaa40a)
 - 安全分析与研究
-  - [可证明运行时不变量执行](https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247497329&idx=1&sn=9fb4139131e1967db3ebd21cedbfdf1a)
+  - [Agent沙箱化与故障安全围堵](https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247497330&idx=1&sn=36e40f165d95528735262f8ea2555c1a)
 - Over Security
-  - [PHP, nuova vulnerabilità RCE: rischio circoscritto e mitigazione disponibile](https://cert-agid.gov.it/news/php-nuova-vulnerabilita-rce-rischio-circoscritto-e-mitigazione-disponibile/)
-  - [BlackX UEFI bootkit exploits Baton Drop flaw to bypass Secure Boot](https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/)
-  - [Field Notes: Reconstructing an Attacker’s Workflow](https://dfir.ch/posts/field_note_attacker_workflow/)
-- Computer Forensics
-  - [Do Scholarships Exist?](https://www.reddit.com/r/computerforensics/comments/1xeec7h/do_scholarships_exist/)
+  - [AI coding agents hijacked using AGENTS.md file in Downloads folder](https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/)
+  - [PHP2Shell: 650 URL potenzialmente vulnerabili tra gli indirizzi censiti in IPA](https://cert-agid.gov.it/news/php2shell-650-url-potenzialmente-vulnerabili-tra-gli-indirizzi-censiti-in-ipa/)
+  - [Quando l’attacco cyber diventa una minaccia fisica](https://guerredirete.substack.com/p/quando-lattacco-cyber-diventa-una)
+- Arturo Di Corinto
+  - [La guerra ibrida è sempre un passo avanti a noi](https://dicorinto.it/guerra-profonda/la-guerra-ibrida-e-sempre-un-passo-avanti-a-noi/)
+- IT Service Management News
+  - [Webinar sull'Annex A della ISO/IEC 27001](http://blog.cesaregallotti.it/2026/10/webinar-sullannex-della-isoiec-27001.html)
+- SANS Internet Storm Center, InfoCON: green
+  - [YARA-X 1.22.0 Release, (Sun, Oct 25th)](https://isc.sans.edu/diary/rss/33454)
 - The Hacker News
-  - [Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software](https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html)
-  - [Leaked LiteLLM Master Key Let Attackers Steal GitHub Tokens and Hijack Release Pipeline](https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html)
-  - [Google Says Gmail and Photos Data Shared With AI Search Could Be Used for Targeted Ads](https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html)
-  - [Researchers Push Over 2 Million Updates to Remotely Disable Popcorn Time Updater That Could Fuel a Botnet](https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html)
-  - [CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud](https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html)
+  - [Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers](https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html)
+  - [PHP2Shell Exploitation Attempts Continue Amid Suspected N. Korea Global Scanning Activity](https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html)
+  - [OpenAI AI Agents Demonstrate VM Escapes and Secret Cross-Sandbox Communication](https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html)
 - Security Affairs
-  - [Pierluigi Paganini answers questions about the PHP2Shell flaws](https://securityaffairs.com/201662/hacking/pierluigi-paganini-answers-questions-about-the-php2shell-flaws.html)
-  - [U.S. CISA adds Collabora Online flaw to its Known Exploited Vulnerabilities catalog](https://securityaffairs.com/201652/security/u-s-cisa-adds-collabora-online-flaw-to-its-known-exploited-vulnerabilities-catalog.html)
-  - [Usage Intelligence: The Monetization Signal Most AI Companies Are Ignoring](https://securityaffairs.com/201643/ai/usage-intelligence-the-monetization-signal-most-ai-companies-are-ignoring.html)
-  - [Capcom Data Breach Exposes 11.7 Million Email Addresses](https://securityaffairs.com/201626/data-breach/capcom-data-breach-exposes-11-7-million-email-addresses.html)
-  - [U.S. CISA adds Arista VeloCloud Orchestrator flaw to its Known Exploited Vulnerabilities catalog](https://securityaffairs.com/201609/hacking/u-s-cisa-adds-arista-velocloud-orchestrator-flaw-to-its-known-exploited-vulnerabilities-catalog.html)
+  - [SECURITY AFFAIRS AI-CYBERSECURITY NEWSLETTER ROUND 5](https://securityaffairs.com/201718/ai/security-affairs-ai-cybersecurity-newsletter-round-5.html)
+  - [SECURITY AFFAIRS MALWARE NEWSLETTER ROUND 120](https://securityaffairs.com/201709/security/security-affairs-malware-newsletter-round-120.html)
+  - [Security Affairs newsletter Round 601 by Pierluigi Paganini – INTERNATIONAL EDITION](https://securityaffairs.com/201698/breaking-news/security-affairs-newsletter-round-601-by-pierluigi-paganini-international-edition.html)
+  - [OpenAI Paused Frontier AI Training After a Security Incident](https://securityaffairs.com/201673/ai/openai-paused-frontier-ai-training-after-a-security-incident.html)
+- Daniel Miessler
+  - [I'm on Team Explanation](https://danielmiessler.com/blog/team-explanation?utm_source=rss&utm_medium=feed&utm_campaign=website)
+  - [Models Are the How, Harnesses Are the What](https://danielmiessler.com/blog/models-how-harnesses-what?utm_source=rss&utm_medium=feed&utm_campaign=website)
 - KitPloit - PenTest Tools!
-  - [thc-BloodMiami](https://kitploit.com/en/tools/github/foxcornlab/thc-bloodmiami)
-  - [smolvm v1.32.1](https://kitploit.com/en/posts/smolvm-433aa3ac7cdd2127)
-  - [Signet](https://kitploit.com/en/tools/github/whispergate/signet)
-  - [emudhra-weak-keys](https://kitploit.com/en/tools/github/corelight/emudhra-weak-keys)
-  - [betterleaks](https://kitploit.com/en/tools/github/betterleaks/betterleaks)
-  - [NETworkManager v2026.10.24.0](https://kitploit.com/en/posts/networkmanager-bc330e961d8344db)
-  - [opengrep](https://kitploit.com/en/tools/github/opengrep/opengrep)
-  - [cdxgen](https://kitploit.com/en/tools/github/cdxgen/cdxgen)
-  - [MarauderBox](https://kitploit.com/en/tools/github/rianhanft/marauderbox)
-  - [system_prompts_leaks — Updated!](https://kitploit.com/en/posts/system_prompts_leaks-914517543fd369f3)
-  - [promptfoo v0.125.0](https://kitploit.com/en/posts/promptfoo-da4baa7e9942f143)
-  - [dsh-infinite-gen-5](https://kitploit.com/en/tools/github/minglink/dsh-infinite-gen-5)
-  - [jumpserver v4.10.20](https://kitploit.com/en/posts/jumpserver-1000767f792a0357)
-  - [SudoStamp](https://kitploit.com/en/tools/gitlab/ritwick7/sudostamp)
-  - [pycdc](https://kitploit.com/en/tools/github/ejfkdev/pycdc)
+  - [remove-ai-watermarks — Updated!](https://kitploit.com/en/posts/remove-ai-watermarks-45b629454ba4e0f2)
+  - [kraken](https://kitploit.com/en/tools/github/adam-atlassoftware/kraken)
+  - [picard](https://kitploit.com/en/tools/github/neitzert/picard)
+  - [hvt](https://kitploit.com/en/tools/github/affolter-engineering/hvt)
+  - [uBlock v1.75.1b18](https://kitploit.com/en/posts/ublock-654f969cccbbefc2)
+  - [Esp32-Blue-Ducky](https://kitploit.com/en/tools/github/tonixtoolkitofficial-afk/esp32-blue-ducky)
+  - [Decepticon v1.6.0](https://kitploit.com/en/posts/decepticon-5dbe123417373ab8)
+  - [Magisk v31.1](https://kitploit.com/en/posts/magisk-15f10fb95d0f4980)
+  - [mitm-proxy-ja3-ja4](https://kitploit.com/en/tools/github/3radiance/mitm-proxy-ja3-ja4)
+  - [osint-brazuca — Updated!](https://kitploit.com/en/posts/osint-brazuca-18dabfe07bb16278)
