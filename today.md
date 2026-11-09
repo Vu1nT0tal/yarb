@@ -1,109 +1,81 @@
-# 每日安全资讯（2026-11-08）
+# 每日安全资讯（2026-11-09）
 
+- Darknet – Hacking Tools, Hacker News & Cyber Security
+  - [SIM Swapping – How a Bribe Bypassed AT&T’s Security](https://www.darknet.org.uk/2026/11/sim-swapping-michael-terpin-att/)
+- 博客
+  - [jdbc driver type1 type4](https://dyrnq.com/jdbc-driver-type1-type4/)
+  - [Parts of speech in English](https://dyrnq.com/parts-of-speech-in-english/)
+  - [imagePullSecrets](https://dyrnq.com/imagepullsecrets/)
 - Sploitus.com Exploits RSS Feed
-  - [Exploit for Incorrect Authorization in Jfrog Artifactory](https://sploitus.com/exploit?id=095DE472-5A32-5EE1-BD8F-398C07D29E19&utm_source=rss&utm_medium=rss)
-  - [Exploit for Improperly Controlled Sequential Memory Allocation in Php](https://sploitus.com/exploit?id=ED4DF36C-9D03-5A14-985E-2ABD9D3CED15&utm_source=rss&utm_medium=rss)
-  - [Exploit for Use After Free in Linux Linux_Kernel](https://sploitus.com/exploit?id=0068DCC2-19FD-5150-BFA7-F6517DB29F68&utm_source=rss&utm_medium=rss)
-  - [npq exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-LIRANTAL-NPQ&utm_source=rss&utm_medium=rss)
-  - [Ares exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SWEETSOFTWARE-ARES&utm_source=rss&utm_medium=rss)
-  - [taowu-cobalt_strike exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-PANDASEC888-TAOWU-COBALT_STRIKE&utm_source=rss&utm_medium=rss)
-  - [LogMePwn exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-0XINFECTION-LOGMEPWN&utm_source=rss&utm_medium=rss)
-  - [cve-2025-32433 exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-0XPTHREE-CVE-2025-32433&utm_source=rss&utm_medium=rss)
-  - [ThreatScraper exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-AMORATH-THREATSCRAPER&utm_source=rss&utm_medium=rss)
-  - [cve-2016-7190 exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-0XCL-CVE-2016-7190&utm_source=rss&utm_medium=rss)
-- SecWiki News
-  - [SecWiki News 2026-11-07 Review](http://www.sec-wiki.com/?2026-11-07)
-- Taxodium
-  - [Album#49 - Music For Programming](https://taxodium.ink/album-49.html)
-- Microsoft Security Blog
-  - [ARTEX abuse expands as cybercriminals target financial sector](https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/)
-- Kitploit — Hacking, PenTest, and Cybersecurity Tools for Your Security Arsenal!
-  - [nuclei — Updated!](https://kitploit.com/en/posts/nuclei-bd0422bca5dc8285)
-  - [HyperLoader](https://kitploit.com/en/tools/github/s12cybersecurity/hyperloader)
-  - [Windows-DNS-Policy-Manager](https://kitploit.com/en/tools/github/joshuatownsend/windows-dns-policy-manager)
-  - [kodeblue](https://kitploit.com/en/tools/github/problem99-io/kodeblue)
-  - [Aliens_eye v2.8.0](https://kitploit.com/en/posts/aliens_eye-0feddd204fb596c0)
-  - [ecapture v2.10.0](https://kitploit.com/en/posts/ecapture-cd4bb4cfe0a26892)
-  - [dtls](https://kitploit.com/en/tools/github/pion/dtls)
-  - [ftpm_attack](https://kitploit.com/en/tools/github/pspreverse/ftpm_attack)
-  - [system_prompts_leaks — Updated!](https://kitploit.com/en/posts/system_prompts_leaks-4bf92d5915fef9a1)
-  - [LUCX_network_traffic_parser](https://kitploit.com/en/tools/github/doriguzzi/lucx_network_traffic_parser)
-  - [FuFuFaFa](https://kitploit.com/en/tools/github/masriyan/fufufafa)
-  - [Obscura](https://kitploit.com/en/tools/github/security-life-org/obscura)
-  - [fluxion v6.39](https://kitploit.com/en/posts/fluxion-84b468625b6de0cf)
-  - [memform-code](https://kitploit.com/en/tools/github/opanhw/memform-code)
-  - [FlatScan](https://kitploit.com/en/tools/github/masriyan/flatscan)
-  - [hackersignal](https://kitploit.com/en/tools/github/benampel/hackersignal)
-- MaskRay
-  - [四色滑道：从博物馆的益智玩具到一道OI题](https://maskray.me/blog/2026-11-07-four-color-slide-puzzle)
+  - [Exploit for CVE-2026-113386](https://sploitus.com/exploit?id=3CFE4ACC-CDC0-5571-A68E-16091798B40E&utm_source=rss&utm_medium=rss)
+  - [hack-skills exploit](https://sploitus.com/exploit?id=ACCF8892-CF01-5E66-90D2-13F5505890A9&utm_source=rss&utm_medium=rss)
+  - [malice exploit](https://sploitus.com/exploit?id=KITPLOIT:6336755542880457328&utm_source=rss&utm_medium=rss)
+  - [vulners-scanner exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-VULNERSCOM-VULNERS-SCANNER&utm_source=rss&utm_medium=rss)
+  - [keyfinder exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-CERTCC-KEYFINDER&utm_source=rss&utm_medium=rss)
+  - [Hob0Rules exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-PRAETORIAN-INC-HOB0RULES&utm_source=rss&utm_medium=rss)
+  - [Veil-Evasion exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-VEIL-FRAMEWORK-VEIL-EVASION&utm_source=rss&utm_medium=rss)
+  - [goldig exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITLAB-RTFMKIESEL-GOLDIG&utm_source=rss&utm_medium=rss)
+  - [SQLiScanner exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-0XBUG-SQLISCANNER&utm_source=rss&utm_medium=rss)
+  - [LSB-Steganography exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-ROBINDAVID-LSB-STEGANOGRAPHY&utm_source=rss&utm_medium=rss)
+  - [aztarna exploit](https://sploitus.com/exploit?id=KITPLOIT:2961151497323480647&utm_source=rss&utm_medium=rss)
+  - [HERCULES exploit](https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-EGEBALCI-HERCULES&utm_source=rss&utm_medium=rss)
+- Darknet – Hacking Tools, Hacker News & Cyber Security
+  - [SIM Swapping – How a Bribe Bypassed AT&T’s Security](https://www.darknet.org.uk/2026/11/sim-swapping-michael-terpin-att/)
+- Dancho Danchev's Blog - Mind Streams of Information Security Knowledge
+  - [My Private Telegram Channel](https://ddanchev.blogspot.com/2026/11/my-private-telegram-channel.html)
+- Lenny Zeltser
+  - [How to Install SIFT Workstation and REMnux on the Same System](https://zeltser.com/sift-workstation-and-remnux)
+- CCC Event Blog
+  - [40C3 - Call for Heralds](https://events.ccc.de/2026/11/08/40c3-call-for-heralds/)
 - Reverse Engineering
-  - [i built native imessage for windows. no mac, no iphone, no relay. the pc itself pretends to be a mac](https://www.reddit.com/r/ReverseEngineering/comments/1xpzfdd/i_built_native_imessage_for_windows_no_mac_no/)
-  - [I wrote a lightweight PE32/PE32+ parser in C for Linux for primary quick Malware Analysis. I would appreciate for some feedback!](https://www.reddit.com/r/ReverseEngineering/comments/1xqdbjw/i_wrote_a_lightweight_pe32pe32_parser_in_c_for/)
-  - [Firecracker VM Escape: PwnEscape Part 2.](https://www.reddit.com/r/ReverseEngineering/comments/1xpvpio/firecracker_vm_escape_pwnescape_part_2/)
-  - [1vs1 with Warranty Voider on Sanhok! – He Got Me! (PUBG Lite PC)](https://www.reddit.com/r/ReverseEngineering/comments/1xq85xi/1vs1_with_warranty_voider_on_sanhok_he_got_me/)
-- shubs
-  - [unlocking any car from X brand in most of the world](https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/)
+  - [Rebuilding Diablo II 1.14d's Game.exe as C++, byte for byte](https://www.reddit.com/r/ReverseEngineering/comments/1xr75f5/rebuilding_diablo_ii_114ds_gameexe_as_c_byte_for/)
+  - [Coffee Explorer. A CFF Explorer rebuilt for modern Windows.](https://www.reddit.com/r/ReverseEngineering/comments/1xr0eml/coffee_explorer_a_cff_explorer_rebuilt_for_modern/)
+  - [binkeep – a free tool to look inside exe files in your browser, nothing gets uploaded](https://www.reddit.com/r/ReverseEngineering/comments/1xqymcv/binkeep_a_free_tool_to_look_inside_exe_files_in/)
+  - [Nikon COOLPIX S33 firmware reverse engineering: ARC700 firmware map, analysis tools and simulator](https://www.reddit.com/r/ReverseEngineering/comments/1xr13e6/nikon_coolpix_s33_firmware_reverse_engineering/)
+  - [[Open Source] Paranoia — a reverse engineering tool written in Rust. Looking for feedback](https://www.reddit.com/r/ReverseEngineering/comments/1xr9f6z/open_source_paranoia_a_reverse_engineering_tool/)
+  - [Reverse engineering the instruction set of the Processor found in MPU6050, ICM20949 accelerometer/gyro combo chips](https://www.reddit.com/r/ReverseEngineering/comments/1xqu6dx/reverse_engineering_the_instruction_set_of_the/)
+  - [3DSRE Reverse Engineering Software DEMO](https://www.reddit.com/r/ReverseEngineering/comments/1xqxeuy/3dsre_reverse_engineering_software_demo/)
+  - [Anatomy of an .ex5 RAM dump: why wrapping your MT5 bot protects nothing](https://www.reddit.com/r/ReverseEngineering/comments/1xr2m19/anatomy_of_an_ex5_ram_dump_why_wrapping_your_mt5/)
 - 奇客Solidot–传递最新科技情报
-  - [ESA Hera 探测器发回 DART 撞击的小行星照片](https://www.solidot.org/story?sid=85825)
-  - [FAA 计划到 2028 年淘汰软盘](https://www.solidot.org/story?sid=85824)
-  - [抗议者闯入微软在欧洲的一处数据中心工地](https://www.solidot.org/story?sid=85823)
-  - [天宫即将迎来首位巴基斯坦宇航员](https://www.solidot.org/story?sid=85822)
-  - [广电总局整治 AI 低俗微短剧](https://www.solidot.org/story?sid=85821)
-- 黑鸟
-  - [一个帮美国政府修电脑的IT，把绝密文件烧进CD带给了埃塞俄比亚](https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189745&idx=1&sn=2acfe05790d7cafedc890666f01c5793)
-- 吾爱破解论坛
-  - [【开放注册公告】吾爱破解论坛2026年11月11日光棍节开放注册公告](https://mp.weixin.qq.com/s?__biz=MjM5Mjc3MDM2Mw==&mid=2651144807&idx=1&sn=38ff9375ad0d69d4b1a0489aff3032e5)
-- 看雪学苑
-  - [给大模型装上固件审计员的骨架：一个 IoT 固件漏洞挖掘 Skill 的设计与实现](https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458623857&idx=1&sn=4452ebefa4729f122b8231ff73cf22bc)
-  - [可验证·可复现·可规模化：AI驱动的Windows内核漏洞挖掘与Fuzzing实战](https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458623857&idx=2&sn=b3443f79121f85fcc3dc523e92166330)
-- 天御攻防实验室
-  - [AI智能体现在能够自主攻破真实企业网络](https://mp.weixin.qq.com/s?__biz=MzU0MzgyMzM2Nw==&mid=2247487329&idx=1&sn=c0f4dd53d251b160ef4370da7aefa12c)
+  - [LG 因其智能电视监视用户面临法律诉讼](https://www.solidot.org/story?sid=85829)
+  - [太平洋垃圾带海水变得更蓝更绿](https://www.solidot.org/story?sid=85828)
+  - [微软移除了 PC 到 PC 的迁移功能](https://www.solidot.org/story?sid=85827)
+  - [台积电考虑进入内存行业](https://www.solidot.org/story?sid=85826)
 - 我的安全视界观
-  - [我的读书笔记：优势从哪来，跟昨天的自己比](https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247488189&idx=1&sn=113a259b4221ccedd3d2c349665bf610)
+  - [AI 渗透 20 轮：5 条链打通，12 条链卡住](https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247488202&idx=1&sn=1e79186c93846c8edad343f259d13955)
+- 漏洞战争
+  - [AI 时代下还需要 Fuzzing 吗?](https://mp.weixin.qq.com/s?__biz=MzU0MzgzNTU0Mw==&mid=2247486165&idx=1&sn=e565b02d12379e0a4b33fd49bbac6668)
+- 黑鸟
+  - [戴着睡眠头带监测睡眠，结果脑电波被拿去训练AI](https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189761&idx=1&sn=a55068549a1f324e07216d5446212cc8)
 - 极客公园
-  - [实测 HY4：腾讯最「夯」大模型，离一线还有多远](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653116182&idx=1&sn=d4d45a0cd14d25065292cdc5e195ad7c)
-  - [为什么「陪伴」，注定是 Personal AI 的核心](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653116153&idx=1&sn=6c34d3e74a2612f319a0e2a7d6303243)
-  - [马斯克官宣 Cybertruck 停产：销量不足预期一成；李飞飞团队推出世界模型「模拟掌机」；小米汽车成立国际事业部｜极客早知道](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653116145&idx=1&sn=88085e9684f32488b5481683e798cfa0)
-- 火绒安全
-  - [立冬 | 万物添冬韵 网安记心间](https://mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg==&mid=2247538668&idx=1&sn=650c2566fb705a0d248fba01d670bbca)
-  - [诚邀渠道合作伙伴共启新征程](https://mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg==&mid=2247538668&idx=2&sn=63cbb14a854bb25afcc8ac0f7b642740)
-- 安全圈
-  - [【安全圈】点了「别再问我」，Claude Code 把密钥写进了公开仓库](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079734&idx=1&sn=ea38ca74c4cda25bed3333c763aeea6b)
-  - [【安全圈】补丁打完才安全？WordPress 更新窗口正被抢跑](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079734&idx=2&sn=71e1d2808ab34462f66cf9ae5f2aad67)
-  - [【安全圈】MFA 被绕过：SonicWall SSL-VPN 漏洞已在野利用](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079734&idx=3&sn=2f99700fdd78fa32d3f809352bd9b144)
-- 安全学术圈
-  - [北京邮电大学 | 低语智能体：面向智能体互联网的事件驱动隐蔽通信协议](https://mp.weixin.qq.com/s?__biz=MzU5MTM5MTQ2MA==&mid=2247496158&idx=1&sn=09b0c23a8f59bfb30ffb51c9c177ca46)
+  - [收购 EA 后，银湖资本与沙特基金 250 亿美元报价 Unity；超10万款应用已适配iPhone Duo；美国再发生 NVIDIA AI 设备失窃案 | 极客早知道](https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&mid=2653116204&idx=1&sn=e4bed63274b937ce9ebc94df50c39b28)
+- 吴鲁加
+  - [科幻](https://mp.weixin.qq.com/s?__biz=Mzg5NDY4ODM1MA==&mid=2247486312&idx=1&sn=ddd6fd1d92b7df9d8c7179e57856912a)
 - Over Security
-  - [Hackers pull off $133 million French bank heist via service provider](https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/)
-  - [CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands](https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/)
-  - [SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks](https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/)
-- ICT Security Magazine
-  - [Gestione delle chiavi crittografiche: ciclo di vita, rotazione e scadenze](https://www.ictsecuritymagazine.com/articoli/gestione-chiavi-crittografiche/)
-- 丁爸 情报分析师的工具箱
-  - [【会议】COSINT 2026 议程抢先看](https://mp.weixin.qq.com/s?__biz=MzI2MTE0NTE3Mw==&mid=2651157996&idx=1&sn=e2044be7d1578483afa910310d6292f5)
-- Daniel Miessler
-  - [The Bitter Lesson, Generalized](https://danielmiessler.com/blog/bitter-lesson-generalized?utm_source=rss&utm_medium=feed&utm_campaign=website)
-  - [Vibe Coding Isn't Using AI to Make Things](https://danielmiessler.com/blog/vibe-coding-isnt-using-ai?utm_source=rss&utm_medium=feed&utm_campaign=website)
-- KitPloit - PenTest Tools!
-  - [nuclei — Updated!](https://kitploit.com/en/posts/nuclei-bd0422bca5dc8285)
-  - [HyperLoader](https://kitploit.com/en/tools/github/s12cybersecurity/hyperloader)
-  - [Windows-DNS-Policy-Manager](https://kitploit.com/en/tools/github/joshuatownsend/windows-dns-policy-manager)
-  - [kodeblue](https://kitploit.com/en/tools/github/problem99-io/kodeblue)
-  - [Aliens_eye v2.8.0](https://kitploit.com/en/posts/aliens_eye-0feddd204fb596c0)
-  - [ecapture v2.10.0](https://kitploit.com/en/posts/ecapture-cd4bb4cfe0a26892)
-  - [dtls](https://kitploit.com/en/tools/github/pion/dtls)
-  - [ftpm_attack](https://kitploit.com/en/tools/github/pspreverse/ftpm_attack)
-  - [system_prompts_leaks — Updated!](https://kitploit.com/en/posts/system_prompts_leaks-4bf92d5915fef9a1)
-  - [LUCX_network_traffic_parser](https://kitploit.com/en/tools/github/doriguzzi/lucx_network_traffic_parser)
-  - [FuFuFaFa](https://kitploit.com/en/tools/github/masriyan/fufufafa)
-  - [Obscura](https://kitploit.com/en/tools/github/security-life-org/obscura)
-  - [fluxion v6.39](https://kitploit.com/en/posts/fluxion-84b468625b6de0cf)
-  - [memform-code](https://kitploit.com/en/tools/github/opanhw/memform-code)
-  - [FlatScan](https://kitploit.com/en/tools/github/masriyan/flatscan)
-  - [hackersignal](https://kitploit.com/en/tools/github/benampel/hackersignal)
+  - [ARTEX: reading the source behind the IOCs](https://andpalmier.com/posts/artex-source-behind-iocs/)
+  - [Iris Ohyama data cloud breach exposes info of 7.7 million customers](https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/)
+  - [SIM Swapping – How a Bribe Bypassed AT&T’s Security](https://www.darknet.org.uk/2026/11/sim-swapping-michael-terpin-att/)
+  - [Se gli aiuti umanitari dell’ONU dipendono da Palantir](https://guerredirete.substack.com/p/se-gli-aiuti-umanitari-dellonu-dipendono)
+- 安全圈
+  - [【安全圈】GPT-6 Cyber发布！漏洞挖掘成本降到千美元级别](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079766&idx=1&sn=a136a27f787a740a8706522b59e326c9)
+  - [【安全圈】Gnosis Pay用户数据泄露！卡号CVV钱包地址全曝光](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079766&idx=2&sn=cd94ac373cb548a747530b88b9d59ddb)
+  - [【安全圈】ARTEX渗透框架闭源！微步在线声明版权收购](https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079766&idx=3&sn=987af32e93ea7154cfe5fbf903e7e9dd)
+- Lenny Zeltser
+  - [How to Install SIFT Workstation and REMnux on the Same System](https://zeltser.com/sift-workstation-and-remnux)
+- Deep Web
+  - [¿Existe algún sitio web similar a Onion para encontrar documentos difíciles de indexar?](https://www.reddit.com/r/deepweb/comments/1xqzndp/existe_algún_sitio_web_similar_a_onion_para/)
+  - [Need help understanding and Navigating](https://www.reddit.com/r/deepweb/comments/1xqvcix/need_help_understanding_and_navigating/)
 - Security Affairs
-  - [Inside ARTEX: AI Hacking Tools, Exposed Servers and South Korean Bank Breaches](https://securityaffairs.com/202607/ai/inside-artex-ai-hacking-tools-exposed-servers-and-south-korean-bank-breaches.html)
-  - [One Product Isn’t the Problem: Monetizing an AI Portfolio Without Confusing Your Customers](https://securityaffairs.com/202603/ai/one-product-isnt-the-problem-monetizing-an-ai-portfolio-without-confusing-your-customers.html)
-  - [U.S. CISA adds SonicWall SonicOS SSLVPN flaw to its Known Exploited Vulnerabilities catalog](https://securityaffairs.com/202581/security/u-s-cisa-adds-sonicwall-sonicos-sslvpn-flaw-to-its-known-exploited-vulnerabilities-catalog.html)
-- The Hacker News
-  - [Claude Code's “Don't Ask Again” File Exposes Passwords and Keys in 1,122 Public Copies on GitHub](https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html)
+  - [Don’t Hand Propaganda a Gift: Reading the Brenner Base Tunnel SE Breach Calmly](https://securityaffairs.com/202691/cyber-crime/dont-hand-propaganda-a-gift-reading-the-brenner-base-tunnel-se-breach-calmly.html)
+  - [SECURITY AFFAIRS AI-CYBERSECURITY NEWSLETTER ROUND 7](https://securityaffairs.com/202682/ai/security-affairs-ai-cybersecurity-newsletter-round-7.html)
+  - [SECURITY AFFAIRS MALWARE NEWSLETTER ROUND 122](https://securityaffairs.com/202657/malware/security-affairs-malware-newsletter-round-122.html)
+  - [Security Affairs newsletter Round 603 by Pierluigi Paganini – INTERNATIONAL EDITION](https://securityaffairs.com/202649/security/security-affairs-newsletter-round-603-by-pierluigi-paganini-international-edition.html)
+  - [Attackers Exploit Third-Party Provider to Raid French Bank Crédit Mutuel Arkéa](https://securityaffairs.com/202628/cyber-crime/attackers-exploit-third-party-provider-to-raid-french-bank-credit-mutuel-arkea.html)
+- SANS Internet Storm Center, InfoCON: green
+  - [Scans for Sshole Vulnerability (CVE-2026-123158), (Sun, Nov 8th)](https://isc.sans.edu/diary/rss/33498)
+- ICT Security Magazine
+  - [Furto di sessione: perché cambiare la password non chiude l’accesso](https://www.ictsecuritymagazine.com/articoli/furto-di-sessione/)
+- 希潭实验室
+  - [第178篇：AI智能体失控自动化入侵Hugging Face的k8s网络案例分析（中篇）](https://mp.weixin.qq.com/s?__biz=MzkzMjI1NjI3Ng==&mid=2247488663&idx=1&sn=1b65410e8d5e11c4aabccd726a73ae1e)
+- Arturo Di Corinto
+  - [HACKER A TUTTA PAGINA](https://dicorinto.it/guerra-profonda/hacker-a-tutta-pagina/)
